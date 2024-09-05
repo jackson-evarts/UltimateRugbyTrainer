@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
 		A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */; };
 		A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */; };
 		A3F49E4D2C8A18C7003A0E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
 		A3F49E452C8A18C6003A0E1D /* UltimateRugbyTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRugbyTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateRugbyTrainerApp.swift; sourceTree = "<group>"; };
 		A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */,
 				A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */,
+				A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */,
 				A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */,
 				A3F49E4E2C8A18C7003A0E1D /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */,
 				A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */,
 				A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */,
 			);

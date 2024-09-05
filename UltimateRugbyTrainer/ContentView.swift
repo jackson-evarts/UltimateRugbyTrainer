@@ -7,17 +7,31 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("This will be the Ultimate Rugby Trainer app")
-            Text("Right now it is just a big rectangle though.")
+            ZStack {
+                // Use UIColor to define a hex color
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color(UIColor(red: 101/255, green: 198/255, blue: 236/255, alpha: 1))) // Inside color
+                    .frame(height: 100)
+                    .frame(maxWidth: .infinity)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1)), lineWidth: 10) // Outline color
+                    )
+                    .padding(.horizontal, 20)
+
+                NavigationLink(destination: GameSimulationView()){
+                    Text("Game Simulation")
+                        .foregroundColor(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1))) // Text color
+                        .font(.title)
+                        .bold()
+                }
+            }
         }
-        .padding()
-        Rectangle()
     }
 }
 
