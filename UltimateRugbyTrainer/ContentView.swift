@@ -14,8 +14,10 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("This will be the Ultimate Rugby Trainer app")
+            Text("Right now it is just a big rectangle though.")
         }
         .padding()
+        Rectangle()
     }
 }
 
