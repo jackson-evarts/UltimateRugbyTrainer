@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            NavigationView{
+            NavigationView{ // Game Simulation Button
                 NavigationLink(destination: GameSimulationView()){
                     ZStack{
                         // Use UIColor to define a hex color
@@ -28,12 +28,14 @@ struct ContentView: View {
                         
                         Text("Game Simulation")
                             .foregroundColor(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1))) // Text color
-                            .font(.title)
+                            .font(.custom("NFPixels-Regular", size: 40))
                             .bold()
+                            .scaledToFit()
+                        
                     } // Close ZStack for Game Simulation Button
                     
                 } // Close NavigationLink
-            } // Close NavigationView
+            } // Close NavigationView (the Game Simulation Button)
             
             
             

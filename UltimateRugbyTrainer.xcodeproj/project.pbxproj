@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
+		A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */; };
 		A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */; };
 		A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */; };
 		A3F49E4D2C8A18C7003A0E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 
 /* Begin PBXFileReference section */
 		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
+		A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NFPixels-Regular.ttf"; sourceTree = "<group>"; };
+		A3DB7C022C8B8D3E005F1DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A3F49E452C8A18C6003A0E1D /* UltimateRugbyTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimateRugbyTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateRugbyTrainerApp.swift; sourceTree = "<group>"; };
 		A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +56,8 @@
 		A3F49E472C8A18C6003A0E1D /* UltimateRugbyTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				A3DB7C022C8B8D3E005F1DF6 /* Info.plist */,
+				A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */,
 				A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */,
 				A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */,
 				A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */,
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3F49E502C8A18C7003A0E1D /* Preview Assets.xcassets in Resources */,
+				A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */,
 				A3F49E4D2C8A18C7003A0E1D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +285,7 @@
 				DEVELOPMENT_TEAM = P6M5J7435U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UltimateRugbyTrainer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +315,7 @@
 				DEVELOPMENT_TEAM = P6M5J7435U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UltimateRugbyTrainer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

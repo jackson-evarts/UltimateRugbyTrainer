@@ -10,7 +10,7 @@ import SwiftUI
 struct GameSimulationView: View {
     var body: some View {
         VStack {
-            Text("Welcome to the Game Simulation")
+            Text("Welcome to the Game Simulation Menu Options")
                 .font(.largeTitle)
                 .padding()
         }
