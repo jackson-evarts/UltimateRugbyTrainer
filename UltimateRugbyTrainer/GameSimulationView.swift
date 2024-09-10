@@ -28,12 +28,17 @@ struct GameSimulationView: View {
                     TimerButton(label: "Start", buttonColor: .yellow, textColor: .black)
                 }
             }
-                
+            
+            // Making the pause button harder to click (must triple click) so that you don't accidentally activate it in your pocket
             if gameSimulationManager.timerState == .running{
-                Button(action: {self.gameSimulationManager.pause()}){
-                    TimerButton(label: "Pause", buttonColor: .yellow, textColor: .black)
-                }
+                TimerButton(label: "Pause", buttonColor: .yellow, textColor: .black)
+                
+                    // Must triple click to pause
+                    .onTapGesture(count: 3){
+                        self.gameSimulationManager.pause()
+                    }
             }
+            
             
             // When the stopwatch is paused, you can press start or stop, so there are two buttons
             if gameSimulationManager.timerState == .paused{
