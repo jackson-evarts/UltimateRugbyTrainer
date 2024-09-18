@@ -11,6 +11,10 @@ import SwiftUI
 // Must be an ObservableObject so that the derived values from this class can update the GameSimulationView
 class GameSimulationViewManager: ObservableObject {
     
+    
+    
+    // STOPWATCH STUFF v DEINTEGRATED 20240918
+    /*
     enum timerMode{
         case running
         case stopped
@@ -40,6 +44,7 @@ class GameSimulationViewManager: ObservableObject {
         secondsElapsed = 0
         timerState = .stopped
     }
+     */
     
     
 }

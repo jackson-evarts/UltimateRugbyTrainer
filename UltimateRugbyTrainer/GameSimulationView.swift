@@ -7,11 +7,26 @@
 
 import SwiftUI
 
+struct GameSimulationView: View{
+    var body: some View {
+        VStack{
+            
+            
+        }
+        
+    }
+}
+
+
+// STOPWATCH STUFF v DEINTEGRATED 20240918
+/*
 struct GameSimulationView: View {
     
     @ObservedObject var gameSimulationManager = GameSimulationViewManager()
     
     var body: some View {
+        
+        
         VStack {
             
             // This is the displayed text for the timer. TODO: Eventually may want to have a countdown to halftime instead of simply counting up.
@@ -22,6 +37,8 @@ struct GameSimulationView: View {
                 .padding(.trailing,100)
                 .padding(.leading,100)
             
+            
+            
             // The different buttons for the stopwatch view depending on the current state of the stopwatch. Ex: When it's stopped you can press start.
             if gameSimulationManager.timerState == .stopped {
                 Button(action: {self.gameSimulationManager.start()}){
@@ -30,6 +47,8 @@ struct GameSimulationView: View {
             }
             
             // Making the pause button harder to click (must triple click) so that you don't accidentally activate it in your pocket
+            
+            
             if gameSimulationManager.timerState == .running{
                 TimerButton(label: "Pause", buttonColor: .yellow, textColor: .black)
                 
@@ -50,6 +69,7 @@ struct GameSimulationView: View {
                 }
                 .padding(.top, 30)
                 
+             
             }
             Spacer()
         }
@@ -57,23 +77,28 @@ struct GameSimulationView: View {
     }
 }
 
+*/
+
 #Preview {
     GameSimulationView()
 }
 
-struct TimerButton: View { // This allows for multiple instances of a TimerButton, so we can have 2 when the button is paused or a different color button for the Stop state.
-    
-    let label: String
-    let buttonColor: Color
-    let textColor: Color
-    
-    
-    var body: some View {
-        Text(label)
-            .foregroundColor(textColor)
-            .padding(.vertical, 20)
-            .padding(.horizontal, 90)
-            .background(buttonColor)
-            .cornerRadius(10)
-    }
-}
+// STOPWATCH STUFF v DEINTEGRATED 20240918
+/*
+ struct TimerButton: View { // This allows for multiple instances of a TimerButton, so we can have 2 when the button is paused or a different color button for the Stop state.
+ 
+ let label: String
+ let buttonColor: Color
+ let textColor: Color
+ 
+ 
+ var body: some View {
+ Text(label)
+ .foregroundColor(textColor)
+ .padding(.vertical, 20)
+ .padding(.horizontal, 90)
+ .background(buttonColor)
+ .cornerRadius(10)
+ }
+ }
+ */
