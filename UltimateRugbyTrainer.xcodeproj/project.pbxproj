@@ -44,7 +44,6 @@
 		A3F49E3C2C8A18C6003A0E1D = {
 			isa = PBXGroup;
 			children = (
-				A38AB2042CA0DE6600367011 /* TutorialView.swift */,
 				A3F49E472C8A18C6003A0E1D /* UltimateRugbyTrainer */,
 				A3F49E462C8A18C6003A0E1D /* Products */,
 			);
@@ -67,6 +66,7 @@
 				A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */,
 				A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */,
 				A3DB7C032C8CCCE0005F1DF6 /* GameSimulationViewManager.swift */,
+				A38AB2042CA0DE6600367011 /* TutorialView.swift */,
 				A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */,
 				A3F49E4E2C8A18C7003A0E1D /* Preview Content */,
 			);
