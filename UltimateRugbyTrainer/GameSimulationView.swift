@@ -7,24 +7,39 @@
 
 import SwiftUI
 
-struct GameSimulationView: View, Hashable{
+struct GameSimulationView: View {
+    @Binding var path: NavigationPath // Pass the navigation path
+
     var body: some View {
-        VStack{
-            // TODO: Secondary menu title (7s Simulation)
-            // here
-            // TODO: Tutorial button nav to Tutorial Page
-            Text("You are on the GameSimulationView")
-            // TODO: Intensity slider
+        VStack {
+            /*
+            Text("Game Simulation")
+                .font(.largeTitle)
+                .padding()
+             */
+            Spacer()
             
-            // TODO: Play button nav to gameplay screen
-            
+            // Button to navigate to TutorialView
+            Button("Go to Tutorial") {
+                path.append("Tutorial") // Append an identifier to the path
+            }
+            .font(.title)
+            .padding()
+            .background(Color.green)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+
+            Spacer()
         }
-        
+        .navigationTitle("Game Simulation")
+        .navigationDestination(for: String.self) { value in
+            if value == "Tutorial" {
+                TutorialView()
+            }
+        }
     }
 }
 
-
-
 #Preview {
-    GameSimulationView()
+    GameSimulationView(path: .constant(NavigationPath()))
 }

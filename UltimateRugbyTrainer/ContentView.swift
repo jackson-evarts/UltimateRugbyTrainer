@@ -7,51 +7,38 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
-    
-    @State private var path = NavigationPath()
-    
+    @State private var path = NavigationPath() // Create a path to track the stack
+
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack{ // Game Simulation Button
+        NavigationStack(path: $path) { // Use a NavigationStack with the path
+            VStack {
+                // Button to navigate to GameSimulationView
                 
+                Spacer()
                 
-                Button("Game Simulation"){
-                    path.append(GameSimulationView())
-                    
+                Button("Go to Game Simulation") {
+                    path.append("GameSimulation") // Append an identifier to the path
                 }
-                
-                /*
-                 ZStack{
-                 // Use UIColor to define a hex color
-                 RoundedRectangle(cornerRadius: 5)
-                 .fill(Color(UIColor(red: 101/255, green: 198/255, blue: 236/255, alpha: 1))) // Inside color
-                 .frame(height: 100)
-                 .frame(maxWidth: .infinity)
-                 .overlay(
-                 RoundedRectangle(cornerRadius: 5)
-                 .stroke(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1)), lineWidth: 10) // Outline color
-                 )
-                 .padding(.horizontal, 20)
-                 
-                 Text("Game Simulation")
-                 .foregroundColor(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1))) // Text color
-                 .font(.custom("NFPixels-Regular", size: 40))
-                 .bold()
-                 .scaledToFit()
-                 
-                 } // Close ZStack for Game Simulation Button
-                 
-                 } // Close NavigationView (the Game Simulation Button)
-                 
-                 */
+                .font(.title)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+
+                Spacer()
             }
-        } // Close outer VStack
-    
+            .navigationTitle("Ultimate Rugby Main Menu")
+            // Define the navigation destinations based on the path
+            .navigationDestination(for: String.self) { value in
+                if value == "GameSimulation" {
+                    GameSimulationView(path: $path) // Navigate to GameSimulationView
+                }
+            }
+        }
     }
 }
+
 
 #Preview {
     ContentView()

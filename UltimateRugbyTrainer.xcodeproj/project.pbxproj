@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38AB2042CA0DE6600367011 /* TutorialView.swift */; };
 		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
 		A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */; };
 		A3DB7C042C8CCCE0005F1DF6 /* GameSimulationViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7C032C8CCCE0005F1DF6 /* GameSimulationViewManager.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A38AB2042CA0DE6600367011 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
 		A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NFPixels-Regular.ttf"; sourceTree = "<group>"; };
 		A3DB7C022C8B8D3E005F1DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		A3F49E3C2C8A18C6003A0E1D = {
 			isa = PBXGroup;
 			children = (
+				A38AB2042CA0DE6600367011 /* TutorialView.swift */,
 				A3F49E472C8A18C6003A0E1D /* UltimateRugbyTrainer */,
 				A3F49E462C8A18C6003A0E1D /* Products */,
 			);
@@ -152,6 +155,7 @@
 				A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */,
 				A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */,
 				A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */,
+				A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */,
 				A3DB7C042C8CCCE0005F1DF6 /* GameSimulationViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
