@@ -25,16 +25,31 @@ struct ContentView: View {
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(10)
-
+                
+                Button("Bronco Trainer") {
+                    
+                }
+                .font(.title)
+                .padding()
+                .background(Color.gray)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                Text("Coming soon!")
+                
                 Spacer()
+                
+                
             }
-            .navigationTitle("Ultimate Rugby Main Menu")
+            .navigationTitle("Main Menu")
             // Define the navigation destinations based on the path
             .navigationDestination(for: String.self) { value in
                 if value == "GameSimulation" {
                     GameSimulationView(path: $path) // Navigate to GameSimulationView
                 }
-            }
+                if value == "BroncoTrainer"{
+                    // TODO: Future endeavor for the app.
+                }
+            } // End navigation logic
         }
     }
 }
