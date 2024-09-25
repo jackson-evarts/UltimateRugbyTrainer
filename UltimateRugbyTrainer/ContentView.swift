@@ -27,7 +27,7 @@ struct ContentView: View {
                 .cornerRadius(10)
                 
                 Button("Bronco Trainer") {
-                    
+                    // TODO: Make it so after 20 clicks the button doesn't click anymore
                 }
                 .font(.title)
                 .padding()
@@ -46,7 +46,7 @@ struct ContentView: View {
                 if value == "GameSimulation" {
                     GameSimulationView(path: $path) // Navigate to GameSimulationView
                 }
-                if value == "BroncoTrainer"{
+                if value == "BroncoTrainer" {
                     // TODO: Future endeavor for the app.
                 }
             } // End navigation logic
