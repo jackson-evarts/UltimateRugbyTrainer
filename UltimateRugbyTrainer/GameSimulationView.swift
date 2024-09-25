@@ -25,14 +25,14 @@ struct GameSimulationView: View {
             Button("Go to Tutorial") {
                 path.append("Tutorial") // Append an identifier to the path
             }
-            .font(.title)
+            .font(.custom("NFPixels-Regular", size: 40))
             .padding()
             .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(10)
             
             Text("Intensity: \(Int(intensity))") // Display current intensity as an integer
-            .font(.headline)
+            .font(.custom("NFPixels-Regular", size: 40))
             .padding()
 
             // Slider with a range from 1 to 5

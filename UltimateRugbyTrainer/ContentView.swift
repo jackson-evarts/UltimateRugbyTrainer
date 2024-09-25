@@ -20,7 +20,7 @@ struct ContentView: View {
                 Button("Go to Game Simulation") {
                     path.append("GameSimulation") // Append an identifier to the path
                 }
-                .font(.title)
+                .font(.custom("NFPixels-Regular", size: 30))
                 .padding()
                 .background(Color.blue)
                 .foregroundColor(.white)
@@ -29,18 +29,21 @@ struct ContentView: View {
                 Button("Bronco Trainer") {
                     // TODO: Make it so after 20 clicks the button doesn't click anymore
                 }
-                .font(.title)
+                .font(.custom("NFPixels-Regular", size: 30))
                 .padding()
                 .background(Color.gray)
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 Text("Coming soon!")
+                .font(.custom("NFPixels-Regular", size: 20))
+
                 
                 Spacer()
                 
                 
             }
             .navigationTitle("Main Menu")
+
             // Define the navigation destinations based on the path
             .navigationDestination(for: String.self) { value in
                 if value == "GameSimulation" {
