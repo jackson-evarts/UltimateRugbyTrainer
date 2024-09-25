@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TutorialView: View {
+    @Binding var path: NavigationPath // Pass the navigation path
+    
     var body: some View {
         VStack {
             Text("Tutorial Page")
@@ -24,5 +26,5 @@ struct TutorialView: View {
 }
 
 #Preview {
-    TutorialView()
+    TutorialView(path: .constant(NavigationPath()))
 }

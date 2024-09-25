@@ -34,7 +34,7 @@ struct GameSimulationView: View {
         .navigationTitle("Game Simulation")
         .navigationDestination(for: String.self) { value in
             if value == "Tutorial" {
-                TutorialView()
+                TutorialView(path: $path)
             }
         }
     }
