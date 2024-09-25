@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GameSimulationView: View {
     @Binding var path: NavigationPath // Pass the navigation path
+    @State private var intensity: Double = 1.0
+
 
     var body: some View {
         VStack {
@@ -28,6 +30,16 @@ struct GameSimulationView: View {
             .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(10)
+            
+            Text("Intensity: \(Int(intensity))") // Display current intensity as an integer
+            .font(.headline)
+            .padding()
+
+            // Slider with a range from 1 to 5
+            Slider(value: $intensity, in: 1...5, step: 1)
+            .padding()
+
+            Spacer()
 
             Spacer()
         }
