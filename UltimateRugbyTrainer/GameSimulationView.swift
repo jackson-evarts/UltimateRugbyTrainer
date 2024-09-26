@@ -25,7 +25,7 @@ struct GameSimulationView: View {
                 Text("Go to Tutorial")
                     .font(.custom("NFPixels-Regular", size: 40))
                     .padding()
-                    .background(Color.green)
+                    .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
@@ -38,8 +38,15 @@ struct GameSimulationView: View {
             Slider(value: $intensity, in: 1...5, step: 1)
                 .padding()
             
-            Spacer()
-            
+            NavigationLink(destination: PlayView()){
+                Text("Play")
+                    .font(.custom("NFPixels-Regular", size: 40))
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+                        
             Spacer()
         }
         .navigationTitle("Game Simulation")
