@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct PlayView: View {
+    @ObservedObject var playLogic = PlayLogic()
+    
     var body: some View {
-        Text("Triple Tap to Pause")
+        VStack{
+            Text("Elapsed Time: \(playLogic.elapsedTime)")
+            // TODO: Display what half it is. Do not show time left in half!
+            Text("Triple Tap to Pause")
+        }
+        .onAppear{ // Start the timer immediately as the screen is brought up
+            playLogic.startTimer()
+            
+        }
+        .onDisappear(){ // Timer stops when the view is put away
+            playLogic.stopTimer()
+            
+        }
     }
 }
 
