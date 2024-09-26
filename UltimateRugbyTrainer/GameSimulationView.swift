@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GameSimulationView: View {
-    @Binding var path: NavigationPath // Pass the navigation path
     @State private var intensity: Double = 1.0
     
     
@@ -22,14 +21,14 @@ struct GameSimulationView: View {
             Spacer()
             
             // Button to navigate to TutorialView
-            Button("Go to Tutorial") {
-                path.append("Tutorial") // Append an identifier to the path
+            NavigationLink(destination: TutorialView()){
+                Text("Go to Tutorial")
+                    .font(.custom("NFPixels-Regular", size: 40))
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
             }
-            .font(.custom("NFPixels-Regular", size: 40))
-            .padding()
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(10)
             
             Text("Intensity: \(Int(intensity))") // Display current intensity as an integer
                 .font(.custom("NFPixels-Regular", size: 40))
@@ -44,14 +43,10 @@ struct GameSimulationView: View {
             Spacer()
         }
         .navigationTitle("Game Simulation")
-        .navigationDestination(for: String.self) { value in
-            if value == "Tutorial" {
-                TutorialView(path: $path)
-            }
-        }
+        
     }
 }
 
 #Preview {
-    GameSimulationView(path: .constant(NavigationPath()))
+    GameSimulationView()
 }

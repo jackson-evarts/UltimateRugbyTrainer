@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var path = NavigationPath() // Create a path to track the stack
     
     var body: some View {
-        NavigationStack(path: $path) { // Use a NavigationStack with the path
+        NavigationStack() {
             VStack {
                 // Button to navigate to GameSimulationView
                 ZStack{
@@ -40,18 +39,18 @@ struct ContentView: View {
                 }
                 
                 Spacer()
-                
-                Button("Go to Game Simulation") {
-                    path.append("GameSimulation") // Append an identifier to the path
+                NavigationLink(destination: GameSimulationView()){
+                    
+                    Text("Go to Game Simulation")
+                        .font(.custom("NFPixels-Regular", size: 30))
+                        .padding()
+                        .background(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1)))
+                    
+                        .foregroundColor(Color(red: 101/255, green: 198/255, blue: 236/255))
+                        .cornerRadius(10)
+                        .border(Color(red: 101/255, green: 198/255, blue: 236/255), width: 5)
+                    
                 }
-                .font(.custom("NFPixels-Regular", size: 30))
-                .padding()
-                .background(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1)))
-                
-                .foregroundColor(Color(red: 101/255, green: 198/255, blue: 236/255))
-                .cornerRadius(10)
-                .border(Color(red: 101/255, green: 198/255, blue: 236/255), width: 5)
-                
                 Button("Bronco Trainer") {
                     // TODO: Make it so after 20 clicks the button doesn't click anymore
                 }
@@ -72,17 +71,11 @@ struct ContentView: View {
             .navigationTitle("Main Menu")
             
             // Define the navigation destinations based on the path
-            .navigationDestination(for: String.self) { value in
-                if value == "GameSimulation" {
-                    GameSimulationView(path: $path) // Navigate to GameSimulationView
-                }
-                if value == "BroncoTrainer" {
-                    // TODO: Future endeavor for the app.
-                }
-            } // End navigation logic
-        }
+            
+        } // End navigation logic
     }
 }
+
 
 
 #Preview {
