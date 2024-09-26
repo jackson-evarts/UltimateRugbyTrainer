@@ -19,9 +19,9 @@ struct ContentView: View {
                         .font(.custom("NFPixels-Regular", size: 105))
                         .foregroundColor(Color(UIColor(red: 101/255, green: 198/255, blue: 236/255, alpha: 1)))
                     Text("Ultimate")
-                            .font(.custom("NFPixels-Regular", size: 100))
-                            .foregroundColor(Color(UIColor(red: 204/255, green: 153/255, blue: 173/255, alpha: 1)))
-                    }
+                        .font(.custom("NFPixels-Regular", size: 100))
+                        .foregroundColor(Color(UIColor(red: 204/255, green: 153/255, blue: 173/255, alpha: 1)))
+                }
                 ZStack{
                     Text("Rugby")
                         .font(.custom("NFPixels-Regular", size: 105))
@@ -29,7 +29,7 @@ struct ContentView: View {
                     Text("Rugby")
                         .font(.custom("NFPixels-Regular", size: 100))
                         .foregroundColor(Color(UIColor(red: 101/255, green: 198/255, blue: 236/255, alpha: 1)))
-                    }
+                }
                 ZStack{
                     Text("Trainer")
                         .font(.custom("NFPixels-Regular", size: 105))
@@ -37,8 +37,8 @@ struct ContentView: View {
                     Text("Trainer")
                         .font(.custom("NFPixels-Regular", size: 100))
                         .foregroundColor(Color(UIColor(red: 204/255, green: 153/255, blue: 173/255, alpha: 1)))
-                    }
-
+                }
+                
                 Spacer()
                 
                 Button("Go to Game Simulation") {
