@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var path = NavigationPath() // Create a path to track the stack
-
+    
     var body: some View {
         NavigationStack(path: $path) { // Use a NavigationStack with the path
             VStack {
@@ -35,15 +35,15 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 Text("Coming soon!")
-                .font(.custom("NFPixels-Regular", size: 20))
-
+                    .font(.custom("NFPixels-Regular", size: 20))
+                
                 
                 Spacer()
                 
                 
             }
             .navigationTitle("Main Menu")
-
+            
             // Define the navigation destinations based on the path
             .navigationDestination(for: String.self) { value in
                 if value == "GameSimulation" {

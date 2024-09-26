@@ -15,10 +15,10 @@ struct TutorialView: View {
             Text("Tutorial Page")
                 .font(.largeTitle)
                 .padding()
-
+            
             Text("Learn more here.")
                 .padding()
-
+            
             Spacer()
         }
         .navigationTitle("Tutorial")
