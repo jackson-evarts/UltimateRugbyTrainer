@@ -11,6 +11,9 @@ import Combine
 
 class PlayLogic: ObservableObject {
     @Published var elapsedTime: Int = 0
+    
+    // TODO: Bring intensity slider selection here
+    
     var timer: Timer?
 
     func startTimer() {
@@ -19,6 +22,9 @@ class PlayLogic: ObservableObject {
         }
     }
 
+    
+    // TODO: Create default game-timelines / arrays for each intensity
+    
     func stopTimer() {
         timer?.invalidate()
         timer = nil

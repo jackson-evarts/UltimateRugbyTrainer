@@ -22,13 +22,14 @@ struct GameSimulationView: View {
             
             // Button to navigate to TutorialView
             NavigationLink(destination: TutorialView()){
-                Text("Go to Tutorial")
+                Text("Tutorial")
                     .font(.custom("NFPixels-Regular", size: 40))
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
+            // TODO: Make buttons and sliders sexy
             
             Text("Intensity: \(Int(intensity))") // Display current intensity as an integer
                 .font(.custom("NFPixels-Regular", size: 40))

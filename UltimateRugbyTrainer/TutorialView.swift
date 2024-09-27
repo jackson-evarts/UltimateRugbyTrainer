@@ -24,6 +24,8 @@ struct TutorialView: View {
     }
 }
 
+// TODO: chef up some graphics/photos for how to play the game. This can be done at the end of development
+
 #Preview {
     TutorialView()
 }

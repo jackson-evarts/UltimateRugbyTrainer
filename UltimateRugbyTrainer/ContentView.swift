@@ -41,7 +41,7 @@ struct ContentView: View {
                 Spacer()
                 NavigationLink(destination: GameSimulationView()){
                     
-                    Text("Go to Game Simulation")
+                    Text("Game Simulation")
                         .font(.custom("NFPixels-Regular", size: 30))
                         .padding()
                         .background(Color(UIColor(red: 5/255, green: 117/255, blue: 162/255, alpha: 1)))
@@ -53,6 +53,7 @@ struct ContentView: View {
                 }
                 Button("Bronco Trainer") {
                     // TODO: Make it so after 20 clicks the button doesn't click anymore
+                    // TODO: Match style of Game Simulation button
                 }
                 .font(.custom("NFPixels-Regular", size: 30))
                 .padding()
@@ -69,6 +70,8 @@ struct ContentView: View {
                 
             }
             .navigationTitle("Main Menu")
+            
+            // TODO: Background
             
             // Define the navigation destinations based on the path
             
