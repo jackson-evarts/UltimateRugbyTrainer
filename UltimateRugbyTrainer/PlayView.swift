@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PlayView: View {
     @ObservedObject var playLogic = PlayLogic()
+    var intensity: Int
     
     var body: some View {
         VStack{
             Text("Elapsed Time: \(playLogic.elapsedTime)")
             // TODO: Display what half it is. Do not show time left in half!
             Text("Triple Tap to Pause")
+            Text("Intensity: \(intensity)")
         }
         .onAppear{ // Start the timer immediately as the screen is brought up
             playLogic.startTimer()
@@ -28,5 +30,5 @@ struct PlayView: View {
 }
 
 #Preview {
-    PlayView()
+    PlayView(intensity: 3)
 }

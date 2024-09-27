@@ -31,16 +31,16 @@ struct GameSimulationView: View {
             }
             // TODO: Make buttons and sliders sexy
             
-            Text("Intensity: \(Int(intensity))") // Display current intensity as an integer
-                .font(.custom("NFPixels-Regular", size: 40))
+            Text("Intensity") // Display current intensity as an integer
+                .font(.custom("NFPixels-Regular", size: 30))
                 .padding()
             
             // Slider with a range from 1 to 5
             Slider(value: $intensity, in: 1...5, step: 1)
                 .padding()
             
-            NavigationLink(destination: PlayView()){
-                Text("Play")
+            NavigationLink(destination: PlayView(intensity: Int(intensity))){
+                Text("Play at Intensity \(Int(intensity))")
                     .font(.custom("NFPixels-Regular", size: 40))
                     .padding()
                     .background(Color.green)
