@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct PlayView: View {
-    @ObservedObject var playLogic = PlayLogic()
     var intensity: Int
-    
+    @ObservedObject var playLogic = PlayLogic()
+
     var body: some View {
         VStack{
             Text("Elapsed Time: \(playLogic.elapsedTime)")

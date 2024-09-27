@@ -29,5 +29,18 @@ class PlayLogic: ObservableObject {
         timer?.invalidate()
         timer = nil
     }
+    
+    func buildGame(intensity: Int) -> [(Int, String)] {
+        var defaultLinebreaks = 8
+        
+        // TODO: Add timings
+        
+        // TODO: Space out scrums depending on intensity
+        
+        // TODO: Add kickoff to the beginning of both arrays
+        return [(0, "Kickoff"), (420, "Halftime"), (480, "Kickoff"), (900, "Full-time")]
+        
+    }
+    
 }
 
