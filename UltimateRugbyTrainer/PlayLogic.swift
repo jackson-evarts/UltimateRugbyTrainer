@@ -21,6 +21,7 @@ class PlayLogic: ObservableObject {
             self.elapsedTime += 1
         }
     }
+    
 
     
     // TODO: Create default game-timelines / arrays for each intensity
@@ -30,8 +31,34 @@ class PlayLogic: ObservableObject {
         timer = nil
     }
     
+    
     func buildGame(intensity: Int) -> [(Int, String)] {
         var defaultLinebreaks = 8
+        
+        if intensity == 1 {
+            
+            
+        }
+        
+        if intensity == 2 {
+            
+            
+        }
+        
+        if intensity == 3 {
+            
+            
+        }
+        
+        if intensity == 4 {
+            
+            
+        }
+        
+        if intensity == 5 {
+            
+            
+        }
         
         // TODO: Add timings
         

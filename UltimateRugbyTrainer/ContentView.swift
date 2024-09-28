@@ -74,7 +74,7 @@ struct ContentView: View {
             // TODO: Background
             
             // Define the navigation destinations based on the path
-            
+
         } // End navigation logic
     }
 }
