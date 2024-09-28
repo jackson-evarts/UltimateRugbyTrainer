@@ -33,36 +33,21 @@ class PlayLogic: ObservableObject {
     
     
     func buildGame(intensity: Int) -> [(Int, String)] {
-        var defaultLinebreaks = 8
         
-        if intensity == 1 {
-            
-            
-        }
+        // Default values will be for intensity 3. Values will be for each half.
+        var defaultDefensiveLinebreaks = 4
+        var defaultScrums = 6
+        var defaultLineouts = 2
+        var defaultOffensiveLinebreaks = 4
+        var tries = 4
         
-        if intensity == 2 {
-            
-            
-        }
         
-        if intensity == 3 {
-            
-            
-        }
+        // TODO: Space out events
         
-        if intensity == 4 {
-            
-            
-        }
         
-        if intensity == 5 {
-            
-            
-        }
         
         // TODO: Add timings
         
-        // TODO: Space out scrums depending on intensity
         
         // TODO: Add kickoff to the beginning of both arrays
         return [(0, "Kickoff"), (420, "Halftime"), (480, "Kickoff"), (900, "Full-time")]
