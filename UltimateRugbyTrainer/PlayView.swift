@@ -9,8 +9,10 @@ import SwiftUI
 
 struct PlayView: View {
     var intensity: Int
+    @ObservedObject var colorSchemeModel: ColorSchemeModel
     @ObservedObject var playLogic = PlayLogic()
-    @State private var backgroundColor: Color = Color.white
+    @State private var backgroundColor: Color = .clear // Initialize with a default value (e.g., .clear)
+    
     @Environment(\.dismiss) var dismiss // Used to help navigate back on triple click
     
     
@@ -48,6 +50,8 @@ struct PlayView: View {
         }
         .onAppear {
             // Animate the color change to black when the view appears
+            backgroundColor = colorSchemeModel.colorScheme.D2
+            
             withAnimation(.easeInOut(duration: 3)) {
                 backgroundColor = Color.black
             }
@@ -63,5 +67,5 @@ struct PlayView: View {
 }
 
 #Preview {
-    PlayView(intensity: 3)
+    PlayView(intensity: 3, colorSchemeModel: ColorSchemeModel())
 }
