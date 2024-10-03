@@ -12,9 +12,9 @@ struct PlayView: View {
     @ObservedObject var playLogic = PlayLogic()
     @State private var backgroundColor: Color = Color.white
     @Environment(\.dismiss) var dismiss // Used to help navigate back on triple click
-
-
-
+    
+    
+    
     var body: some View {
         ZStack{
             backgroundColor.edgesIgnoringSafeArea(.all)
@@ -29,11 +29,11 @@ struct PlayView: View {
                 
                 Text("Elapsed Time: \(formattedTime)")
                     .foregroundColor(.white)
-
+                
                 // TODO: Display what half it is. Do not show time left in half!
                 Text("Triple Tap to Return to Menu")
                     .foregroundColor(.white)
-
+                
                 Text("Intensity: \(intensity)")
                     .foregroundColor(.white)
             }

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct UltimateRugbyTrainerApp: App {
+    var colorSchemeModel = ColorSchemeModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(colorSchemeModel: colorSchemeModel)
         }
     }
 }

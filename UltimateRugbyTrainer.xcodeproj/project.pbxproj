@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38AB2042CA0DE6600367011 /* TutorialView.swift */; };
+		A3A680DC2CAEF4F400B061E5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */; };
 		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
 		A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */; };
 		A3EAD7EA2CA4EB55005FE69A /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAD7E92CA4EB55005FE69A /* PlayView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		A38AB2042CA0DE6600367011 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
 		A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NFPixels-Regular.ttf"; sourceTree = "<group>"; };
 		A3DB7C022C8B8D3E005F1DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */,
 				A3EAD7EB2CA5AF02005FE69A /* PlayLogic.swift */,
 				A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */,
+				A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */,
 				A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */,
 				A3EAD7E92CA4EB55005FE69A /* PlayView.swift */,
 				A38AB2042CA0DE6600367011 /* TutorialView.swift */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A680DC2CAEF4F400B061E5 /* SettingsView.swift in Sources */,
 				A3EAD7EA2CA4EB55005FE69A /* PlayView.swift in Sources */,
 				A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */,
 				A3EAD7EC2CA5AF02005FE69A /* PlayLogic.swift in Sources */,

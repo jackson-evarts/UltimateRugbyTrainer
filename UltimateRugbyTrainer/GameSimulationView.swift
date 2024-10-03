@@ -47,7 +47,7 @@ struct GameSimulationView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
-                        
+            
             Spacer()
         }
         .navigationTitle("Game Simulation")
