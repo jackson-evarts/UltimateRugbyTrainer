@@ -17,30 +17,30 @@ class ColorSchemeModel: ObservableObject {
 
 // Define a protocol for the color scheme
 protocol ColorSchemeProtocol {
-    var accent: Color { get }
     var D1: Color { get }
     var D2: Color { get }
     var D3: Color { get }
-    var mainDetail: Color { get }
+    var D4: Color { get }
+    var D5: Color { get }
 }
 
 // Conform USAColors to ColorSchemeProtocol
 struct USAColors: ColorSchemeProtocol {
-    var accent = Color(UIColor(red: 180/255, green: 36/255, blue: 52/255, alpha: 1))  // #b42434
-    var D3 = Color(UIColor(red: 60/255, green: 60/255, blue: 108/255, alpha: 1))  // #3c3c6c
+    var D1 = Color(UIColor(red: 180/255, green: 36/255, blue: 52/255, alpha: 1))  // #b42434
+    var D2 = Color(UIColor(red: 60/255, green: 60/255, blue: 108/255, alpha: 1))  // #3c3c6c
     //var mainDetail = Color(UIColor(red: 204/255, green: 204/255, blue: 217/255, alpha: 1))  // #ccccd9
-    var mainDetail = Color.white
-    var D1 = Color(UIColor(red: 133/255, green: 133/255, blue: 164/255, alpha: 1))  // #8585a4
-    var D2 = Color(UIColor(red: 116/255, green: 112/255, blue: 148/255, alpha: 1))  // #747094
+    var D3 = Color.white
+    var D4 = Color(UIColor(red: 133/255, green: 133/255, blue: 164/255, alpha: 1))  // #8585a4
+    var D5 = Color(UIColor(red: 116/255, green: 112/255, blue: 148/255, alpha: 1))  // #747094
 }
 
 // Conform SAColors to ColorSchemeProtocol
 struct SAColors: ColorSchemeProtocol {
-    var accent = Color(UIColor(red: 196/255, green: 159/255, blue: 63/255, alpha: 1))  // #c49f3f
-    var D1 = Color(UIColor(red: 232/255, green: 208/255, blue: 125/255, alpha: 1))  // #e8d07d
-    var D2 = Color(UIColor(red: 247/255, green: 241/255, blue: 192/255, alpha: 1))  // #f7f1c0
-    var D3 = Color(UIColor(red: 150/255, green: 160/255, blue: 102/255, alpha: 1))  // #96a066
-    var mainDetail = Color(UIColor(red: 50/255, green: 85/255, blue: 52/255, alpha: 1))  // #325534
+    var D1 = Color(UIColor(red: 196/255, green: 159/255, blue: 63/255, alpha: 1))  // #c49f3f
+    var D2 = Color(UIColor(red: 232/255, green: 208/255, blue: 125/255, alpha: 1))  // #e8d07d
+    var D3 = Color(UIColor(red: 247/255, green: 241/255, blue: 192/255, alpha: 1))  // #f7f1c0
+    var D4 = Color(UIColor(red: 150/255, green: 160/255, blue: 102/255, alpha: 1))  // #96a066
+    var D5 = Color(UIColor(red: 50/255, green: 85/255, blue: 52/255, alpha: 1))  // #325534
 }
 
 
@@ -62,12 +62,12 @@ struct SettingsView: View {
             }
             .font(.custom("NFPixels-Regular", size: 30))
             .padding()
-            .background(usaColors.D1)
-            .foregroundColor(usaColors.mainDetail)
+            .background(usaColors.D5)
+            .foregroundColor(usaColors.D3)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(usaColors.accent, lineWidth: 5)
+                    .stroke(usaColors.D2, lineWidth: 5)
             )
             .padding(.bottom)
             
@@ -77,11 +77,11 @@ struct SettingsView: View {
             .font(.custom("NFPixels-Regular", size: 30))
             .padding()
             .background(saColors.D1)
-            .foregroundColor(saColors.mainDetail)
+            .foregroundColor(saColors.D3)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(saColors.accent, lineWidth: 5)
+                    .stroke(saColors.D5, lineWidth: 5)
             )
             
             Spacer()

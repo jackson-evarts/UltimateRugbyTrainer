@@ -19,7 +19,7 @@ struct ContentView: View {
         NavigationStack {
             ZStack {
                 // Background color filling the entire screen
-                colorSchemeModel.colorScheme.D1 // Background color #8585a4
+                colorSchemeModel.colorScheme.D2 // Background color #8585a4
                     .edgesIgnoringSafeArea(.all) // Fill entire background
                 
                 VStack {
@@ -38,12 +38,12 @@ struct ContentView: View {
                         Text("Settings")
                             .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
-                            .background(colorSchemeModel.colorScheme.D1) // Background color #ccccd9
-                            .foregroundColor(colorSchemeModel.colorScheme.mainDetail) // Text color #3c3c6c
+                            .background(colorSchemeModel.colorScheme.D4) // Background color #ccccd9
+                            .foregroundColor(colorSchemeModel.colorScheme.D3) // Text color #3c3c6c
                             .cornerRadius(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.accent, lineWidth: 5) // Outline (border) color #3c3c6c
+                                    .stroke(colorSchemeModel.colorScheme.D5, lineWidth: 5) // Outline (border) color #3c3c6c
                             )
                     }
                     
@@ -52,12 +52,12 @@ struct ContentView: View {
                         Text("Game Simulation")
                             .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
-                            .background(colorSchemeModel.colorScheme.D1) // Background color
-                            .foregroundColor(colorSchemeModel.colorScheme.mainDetail) // Text color
+                            .background(colorSchemeModel.colorScheme.D4) // Background color #ccccd9
+                            .foregroundColor(colorSchemeModel.colorScheme.D3) // Text color #3c3c6c
                             .cornerRadius(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.accent, lineWidth: 5) // Outline (border) color #3c3c6c
+                                    .stroke(colorSchemeModel.colorScheme.D5, lineWidth: 5) // Outline (border) color #3c3c6c
                             )
                     }
                     
@@ -68,16 +68,16 @@ struct ContentView: View {
                     .font(.custom("NFPixels-Regular", size: 30))
                     .padding()
                     .background(Color.gray) // Background color #ccccd9
-                    .foregroundColor(Color.white) // Text color #3c3c6c
+                    .foregroundColor(colorSchemeModel.colorScheme.D3) // Text color #3c3c6c
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.white, lineWidth: 5) // Outline (border) color #3c3c6c
+                            .stroke(colorSchemeModel.colorScheme.D5, lineWidth: 5) // Outline (border) color #3c3c6c
                     )
                     
                     Text("Coming soon!")
                         .font(.custom("NFPixels-Regular", size: 20))
-                    
+                        .foregroundColor(colorSchemeModel.colorScheme.D3)
                     Spacer()
                 }
                 .padding() // Add padding to avoid content getting too close to the edges
