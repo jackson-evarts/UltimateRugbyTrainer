@@ -42,10 +42,10 @@ struct BouncingSlider: View {
                 
                 // Thumb (draggable)
                 Circle()
-                    .fill(Color.white)
+                    .fill(colorSchemeModel.colorScheme.D5)
                     .frame(width: thumbSize, height: thumbSize)
                     .overlay(
-                        Circle().stroke(colorSchemeModel.colorScheme.D5, lineWidth: 2) // Add border to thumb
+                        Circle().stroke(colorSchemeModel.colorScheme.D4, lineWidth: 3.5) // Add border to thumb
                     )
                     .offset(x: thumbPosition)
                     .gesture(
@@ -101,35 +101,39 @@ struct GameSimulationView: View {
                     // Button to navigate to TutorialView
                     NavigationLink(destination: TutorialView()){
                         Text("Tutorial")
-                            .font(.custom("NFPixels-Regular", size: 40))
+                            .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
+                            .background(colorSchemeModel.colorScheme.D4)
+                            .foregroundColor(colorSchemeModel.colorScheme.D1)
                             .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(colorSchemeModel.colorScheme.D3, lineWidth: 5)
+                            )
                     }
                     // TODO: Make buttons and sliders sexy
                     
                     Text("Intensity") // Display current intensity as an integer
                         .font(.custom("NFPixels-Regular", size: 30))
-                        .foregroundColor(colorSchemeModel.colorScheme.D5)
                         .padding()
+                        .foregroundColor(colorSchemeModel.colorScheme.D1)
+                        
                     
-                    // Slider with a range from 1 to 5
-                    /*
-                     Slider(value: $intensity, in: 1...5, step: 1)
-                     .padding()
-                     .foregroundColor(colorSchemeModel.colorScheme.D5)
-                     */
+
                     BouncingSlider(value: $intensity, colorSchemeModel: colorSchemeModel)
                         .padding()
                      
                     NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: ColorSchemeModel())){
                         Text("Play at Intensity \(Int(intensity))")
-                            .font(.custom("NFPixels-Regular", size: 40))
+                            .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
-                            .background(Color.green)
-                            .foregroundColor(.white)
+                            .background(colorSchemeModel.colorScheme.D5)
+                            .foregroundColor(colorSchemeModel.colorScheme.D1)
                             .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(colorSchemeModel.colorScheme.D4, lineWidth: 5)
+                            )
                     }
                     
                     Spacer()
