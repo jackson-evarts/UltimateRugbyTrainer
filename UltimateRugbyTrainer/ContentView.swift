@@ -48,7 +48,7 @@ struct ContentView: View {
                     }
                     
                     // Game Simulation Button
-                    NavigationLink(destination: GameSimulationView(colorSchemeModel: ColorSchemeModel())) {
+                    NavigationLink(destination: GameSimulationView(colorSchemeModel: colorSchemeModel)) {
                         Text("Game Simulation")
                             .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
