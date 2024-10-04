@@ -17,16 +17,16 @@ struct BouncingSlider: View {
     var step: Double = 1 // Slider step size
     
     var thumbSize: CGFloat = 20 // Size of the thumb
-
-
-
+    
+    
+    
     @State private var isDragging: Bool = false // To track if the user is dragging
-
+    
     var body: some View {
         GeometryReader { geometry in
             let sliderWidth = geometry.size.width - thumbSize // Width of the track minus the thumb's width
             let thumbPosition = CGFloat((value - range.lowerBound) / (range.upperBound - range.lowerBound)) * sliderWidth
-
+            
             ZStack(alignment: .leading) {
                 // Track background
                 Rectangle()
@@ -98,6 +98,30 @@ struct GameSimulationView: View {
                         .aspectRatio(contentMode: .fit)
                         .padding()
                     
+                    Spacer()
+                    
+                    Text("Intensity") // Display current intensity as an integer
+                        .font(.custom("NFPixels-Regular", size: 30))
+                        .foregroundColor(colorSchemeModel.colorScheme.D1)
+                    
+                    
+                    
+                    BouncingSlider(value: $intensity, colorSchemeModel: colorSchemeModel)
+                    
+                    NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: ColorSchemeModel())){
+                        Text("Play at Intensity \(Int(intensity))")
+                            .font(.custom("NFPixels-Regular", size: 30))
+                            .padding()
+                            .background(colorSchemeModel.colorScheme.D5)
+                            .foregroundColor(colorSchemeModel.colorScheme.D1)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(colorSchemeModel.colorScheme.D4, lineWidth: 5)
+                            )
+                            .padding()
+                    }
+                    
                     // Button to navigate to TutorialView
                     NavigationLink(destination: TutorialView()){
                         Text("Tutorial")
@@ -109,30 +133,6 @@ struct GameSimulationView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(colorSchemeModel.colorScheme.D3, lineWidth: 5)
-                            )
-                    }
-                    // TODO: Make buttons and sliders sexy
-                    
-                    Text("Intensity") // Display current intensity as an integer
-                        .font(.custom("NFPixels-Regular", size: 30))
-                        .padding()
-                        .foregroundColor(colorSchemeModel.colorScheme.D1)
-                        
-                    
-
-                    BouncingSlider(value: $intensity, colorSchemeModel: colorSchemeModel)
-                        .padding()
-                     
-                    NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: ColorSchemeModel())){
-                        Text("Play at Intensity \(Int(intensity))")
-                            .font(.custom("NFPixels-Regular", size: 30))
-                            .padding()
-                            .background(colorSchemeModel.colorScheme.D5)
-                            .foregroundColor(colorSchemeModel.colorScheme.D1)
-                            .cornerRadius(10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.D4, lineWidth: 5)
                             )
                     }
                     

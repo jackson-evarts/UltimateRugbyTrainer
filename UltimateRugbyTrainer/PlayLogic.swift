@@ -35,16 +35,44 @@ class PlayLogic: ObservableObject {
     func buildGame(intensity: Int) -> [(Int, String)] {
         
         // Default values will be for intensity 3. Values will be for each half.
-        var defaultDefensiveLinebreaks = 4
-        var defaultScrums = 6
-        var defaultLineouts = 2
-        var defaultOffensiveLinebreaks = 4
-        var tries = 4
+        var defaultDefensiveLinebreaks = 4 // ^ Increase Difficulty
+        var defaultScrums = 6 // ^ Decrease Difficulty
+        var defaultLineouts = 2 // ^ Decrease Difficulty
+        var defaultOffensiveLinebreaks = 4 // ^ Increase Difficulty
+        var tries = 4 // TODO: Make tries a random value? Not necessarily harder or easier. (Have to sprint, but you get a short break and water afterwards)
+        var offense = false // More Offense = Less Difficulty
         
+        
+        
+        /*
+        if intensity == 1 {
+            // 3 less defensive linebreaks
+            defaultDefensiveLinebreaks -= 3
+            
+            // 3 more scrums
+            defaultScrums += 3
+            
+            // 3 more lineouts
+            defaultLineouts += 3
+            
+            // 2 less linebreaks
+            defaultOffensiveLinebreaks -= 2
+            
+            
+        }
+        if intensity == 2 {
+            
+            
+            
+        }
+         */
         
         // TODO: Space out events
-        
-        
+
+        if intensity >= 3 && defaultDefensiveLinebreaks != 0 {
+            print("Poach")
+            
+        }
         
         // TODO: Add timings
         

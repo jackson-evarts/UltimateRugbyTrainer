@@ -29,7 +29,7 @@ struct USAColors: ColorSchemeProtocol {
     var D1 = Color.white
     var D2 = Color(UIColor(red: 133/255, green: 133/255, blue: 164/255, alpha: 1))  // #8585a4
     var D3 = Color(UIColor(red: 116/255, green: 112/255, blue: 148/255, alpha: 1))  // #747094
-
+    
     //var mainDetail = Color(UIColor(red: 204/255, green: 204/255, blue: 217/255, alpha: 1))  // #ccccd9
     var D4 = Color(UIColor(red: 60/255, green: 60/255, blue: 108/255, alpha: 1))  // #3c3c6c
     var D5 = Color(UIColor(red: 180/255, green: 36/255, blue: 52/255, alpha: 1))  // #b42434
@@ -42,8 +42,8 @@ struct SAColors: ColorSchemeProtocol {
     var D3 = Color(UIColor(red: 196/255, green: 159/255, blue: 63/255, alpha: 1))  // #c49f3f
     var D4 = Color(UIColor(red: 150/255, green: 160/255, blue: 102/255, alpha: 1))  // #96a066
     var D5 = Color(UIColor(red: 50/255, green: 85/255, blue: 52/255, alpha: 1))  // #325534
-
-
+    
+    
 }
 
 
@@ -55,43 +55,50 @@ struct SettingsView: View {
     let saColors = SAColors()
     
     var body: some View {
-        VStack {
-            Text("Select Color Scheme")
-                .font(.title)
+        ZStack{
+            /*
+             Color.
+             .edgesIgnoringSafeArea(.all) // Fill entire background
+             */
+            
+            VStack {
+                Text("Select Color Scheme")
+                    .font(.title)
+                    .padding()
+                
+                Button("USA Color Scheme") {
+                    colorSchemeModel.colorScheme = USAColors() // Set USA colors
+                }
+                .font(.custom("NFPixels-Regular", size: 30))
                 .padding()
-            
-            Button("USA Color Scheme") {
-                colorSchemeModel.colorScheme = USAColors() // Set USA colors
+                .background(usaColors.D2) // Background color
+                .foregroundColor(usaColors.D1) // Text color
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(usaColors.D3, lineWidth: 5) // Outline (border) color
+                )
+                .padding(.bottom)
+                
+                
+                Button("SA Color Scheme") {
+                    colorSchemeModel.colorScheme = SAColors() // Set SA colors
+                }
+                .font(.custom("NFPixels-Regular", size: 30))
+                .padding()
+                .background(saColors.D2) // Background color
+                .foregroundColor(saColors.D1) // Text color
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(saColors.D3, lineWidth: 5) // Outline (border) color
+                )
+                
+                Spacer()
             }
-            .font(.custom("NFPixels-Regular", size: 30))
-            .padding()
-            .background(usaColors.D2) // Background color
-            .foregroundColor(usaColors.D1) // Text color
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(usaColors.D3, lineWidth: 5) // Outline (border) color
-            )
-            .padding(.bottom)
             
-            
-            Button("SA Color Scheme") {
-                colorSchemeModel.colorScheme = SAColors() // Set SA colors
-            }
-            .font(.custom("NFPixels-Regular", size: 30))
-            .padding()
-            .background(saColors.D2) // Background color
-            .foregroundColor(saColors.D1) // Text color
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(saColors.D3, lineWidth: 5) // Outline (border) color
-            )
-            
-            Spacer()
+            // Rectangle().foregroundColor(saColors.D4)
         }
-        
-        // Rectangle().foregroundColor(saColors.D4)
     }
 }
 
