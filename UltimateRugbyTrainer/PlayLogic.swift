@@ -39,10 +39,14 @@ class PlayLogic: ObservableObject {
         var defaultScrums = 6 // ^ Decrease Difficulty
         var defaultLineouts = 2 // ^ Decrease Difficulty
         var defaultOffensiveLinebreaks = 4 // ^ Increase Difficulty
-        var tries = 4 // TODO: Make tries a random value? Not necessarily harder or easier. (Have to sprint, but you get a short break and water afterwards)
+        var tries = 3 // TODO: Make tries a random value? Not necessarily harder or easier. (Have to sprint, but you get a short break and water afterwards)
         var offense = false // More Offense = Less Difficulty
         
+        let totalEvents = tries + defaultScrums + defaultLineouts
         
+        var avgInterval = 420 / totalEvents
+        
+        print(avgInterval)
         
         /*
         if intensity == 1 {
@@ -83,4 +87,3 @@ class PlayLogic: ObservableObject {
     }
     
 }
-

@@ -108,7 +108,7 @@ struct GameSimulationView: View {
                     
                     BouncingSlider(value: $intensity, colorSchemeModel: colorSchemeModel)
                     
-                    NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: ColorSchemeModel())){
+                    NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: colorSchemeModel)){
                         Text("Play at Intensity \(Int(intensity))")
                             .font(.custom("NFPixels-Regular", size: 30))
                             .padding()

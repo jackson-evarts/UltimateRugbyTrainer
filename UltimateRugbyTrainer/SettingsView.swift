@@ -63,9 +63,13 @@ struct SettingsView: View {
             
             VStack {
                 Text("Select Color Scheme")
-                    .font(.title)
+                    .font(.custom("NFPixels-Regular", size: 35))
                     .padding()
-                
+                    .foregroundColor(Color.black) // Text color
+                    .frame(maxWidth: .infinity, alignment: .center) // Center the text horizontally
+                    .underline(true, color: Color.black) // Underline with a custom color (optional)
+
+
                 Button("USA Color Scheme") {
                     colorSchemeModel.colorScheme = USAColors() // Set USA colors
                 }
