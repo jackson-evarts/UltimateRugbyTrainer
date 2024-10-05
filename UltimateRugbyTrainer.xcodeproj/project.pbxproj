@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A321D4892CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */; };
+		A321D4902CB17DB700ECFB96 /* BuildGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */; };
 		A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38AB2042CA0DE6600367011 /* TutorialView.swift */; };
 		A3A680DC2CAEF4F400B061E5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */; };
 		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
@@ -19,7 +21,20 @@
 		A3F49E502C8A18C7003A0E1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F49E4F2C8A18C7003A0E1D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A321D48A2CB0C8D500ECFB96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3F49E3D2C8A18C6003A0E1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3F49E442C8A18C6003A0E1D;
+			remoteInfo = UltimateRugbyTrainer;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		A321D4862CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimateRugbyTrainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateRugbyTrainerTests.swift; sourceTree = "<group>"; };
+		A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildGameTests.swift; sourceTree = "<group>"; };
 		A38AB2042CA0DE6600367011 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
@@ -35,6 +50,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A321D4832CB0C8D500ECFB96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3F49E422C8A18C6003A0E1D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +67,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A321D4872CB0C8D500ECFB96 /* UltimateRugbyTrainerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */,
+				A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */,
+			);
+			path = UltimateRugbyTrainerTests;
+			sourceTree = "<group>";
+		};
 		A3F49E3C2C8A18C6003A0E1D = {
 			isa = PBXGroup;
 			children = (
 				A3F49E472C8A18C6003A0E1D /* UltimateRugbyTrainer */,
+				A321D4872CB0C8D500ECFB96 /* UltimateRugbyTrainerTests */,
 				A3F49E462C8A18C6003A0E1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A3F49E452C8A18C6003A0E1D /* UltimateRugbyTrainer.app */,
+				A321D4862CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +123,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A321D4852CB0C8D500ECFB96 /* UltimateRugbyTrainerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A321D48E2CB0C8D500ECFB96 /* Build configuration list for PBXNativeTarget "UltimateRugbyTrainerTests" */;
+			buildPhases = (
+				A321D4822CB0C8D500ECFB96 /* Sources */,
+				A321D4832CB0C8D500ECFB96 /* Frameworks */,
+				A321D4842CB0C8D500ECFB96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A321D48B2CB0C8D500ECFB96 /* PBXTargetDependency */,
+			);
+			name = UltimateRugbyTrainerTests;
+			productName = UltimateRugbyTrainerTests;
+			productReference = A321D4862CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A3F49E442C8A18C6003A0E1D /* UltimateRugbyTrainer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3F49E532C8A18C7003A0E1D /* Build configuration list for PBXNativeTarget "UltimateRugbyTrainer" */;
@@ -117,6 +168,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					A321D4852CB0C8D500ECFB96 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A3F49E442C8A18C6003A0E1D;
+					};
 					A3F49E442C8A18C6003A0E1D = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -136,11 +191,19 @@
 			projectRoot = "";
 			targets = (
 				A3F49E442C8A18C6003A0E1D /* UltimateRugbyTrainer */,
+				A321D4852CB0C8D500ECFB96 /* UltimateRugbyTrainerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A321D4842CB0C8D500ECFB96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3F49E432C8A18C6003A0E1D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -154,6 +217,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A321D4822CB0C8D500ECFB96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A321D4902CB17DB700ECFB96 /* BuildGameTests.swift in Sources */,
+				A321D4892CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3F49E412C8A18C6003A0E1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,7 +242,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A321D48B2CB0C8D500ECFB96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3F49E442C8A18C6003A0E1D /* UltimateRugbyTrainer */;
+			targetProxy = A321D48A2CB0C8D500ECFB96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		A321D48C2CB0C8D500ECFB96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P6M5J7435U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacksonevarts.UltimateRugbyTrainerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltimateRugbyTrainer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UltimateRugbyTrainer";
+			};
+			name = Debug;
+		};
+		A321D48D2CB0C8D500ECFB96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P6M5J7435U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacksonevarts.UltimateRugbyTrainerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltimateRugbyTrainer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UltimateRugbyTrainer";
+			};
+			name = Release;
+		};
 		A3F49E512C8A18C7003A0E1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -353,6 +469,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A321D48E2CB0C8D500ECFB96 /* Build configuration list for PBXNativeTarget "UltimateRugbyTrainerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A321D48C2CB0C8D500ECFB96 /* Debug */,
+				A321D48D2CB0C8D500ECFB96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A3F49E402C8A18C6003A0E1D /* Build configuration list for PBXProject "UltimateRugbyTrainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
