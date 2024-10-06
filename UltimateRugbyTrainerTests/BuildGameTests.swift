@@ -22,7 +22,7 @@ final class BuildGameTests: XCTestCase {
         
         
         // c. Then (Assert)
-        // XCTAssert(gameArr.contains(where: 0))
+        //XCTAssert(gameArr.contains((0, "Kickoff")))
         
     }
 
