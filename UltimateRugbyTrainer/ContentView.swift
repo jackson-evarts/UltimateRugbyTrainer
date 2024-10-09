@@ -35,43 +35,19 @@ struct ContentView: View {
                     
                     // Settings Button
                     NavigationLink(destination: SettingsView(colorSchemeModel: colorSchemeModel)) {
-                        Text("Settings")
-                            .font(.custom("NFPixels-Regular", size: 30))
-                            .padding()
-                            .background(colorSchemeModel.colorScheme.D4)
-                            .foregroundColor(colorSchemeModel.colorScheme.D1)
-                            .cornerRadius(10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.D3, lineWidth: 5)
-                            )
+                        PixelTextForButton(label: "Settings")
                     }
+
+                     
                     
                     // Game Simulation Button
                     NavigationLink(destination: GameSimulationView(colorSchemeModel: colorSchemeModel)) {
-                        Text("Game Simulation")
-                            .font(.custom("NFPixels-Regular", size: 30))
-                            .padding()
-                            .background(colorSchemeModel.colorScheme.D4)
-                            .foregroundColor(colorSchemeModel.colorScheme.D1)
-                            .cornerRadius(10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.D3, lineWidth: 5)
-                            )
+                        PixelTextForButton(label: "Game Simulation")
+
                     }
                     
                     // Bronco Trainer Button (disabled)
-                    Text("Bronco Trainer")
-                        .font(.custom("NFPixels-Regular", size: 30))
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.white, lineWidth: 5)
-                        )
+                    PixelTextForButton(label: "Bronco", backgroundColor: .gray, outlineColor: .white, textColor: .white)
                     
                     Text("Coming soon!")
                         .font(.custom("NFPixels-Regular", size: 20))
