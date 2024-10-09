@@ -31,59 +31,116 @@ class PlayLogic: ObservableObject {
         timer = nil
     }
     
-    
+    // Precondition: The user has selected an intensity level (1-5) which is passed to this function as they click 'Play'
+    // ======
+    // Postcondition: The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
+    // NOTE: This function's outline and description was built by Jackson, but the specific code was written by ChatGPT circa 20241009
     func buildGame(intensity: Int) -> [(Int, String)] {
         
-        // Default values will be for intensity 3. Values will be for each half.
-        var defaultDefensiveLinebreaks = 4 // ^ Increase Difficulty
-        var defaultScrums = 6 // ^ Decrease Difficulty
-        var defaultLineouts = 2 // ^ Decrease Difficulty
-        var defaultOffensiveLinebreaks = 4 // ^ Increase Difficulty
-        var tries = 3 // TODO: Make tries a random value? Not necessarily harder or easier. (Have to sprint, but you get a short break and water afterwards)
-        var offense = false // More Offense = Less Difficulty
+        // Adjustments based on intensity level (default for intensity 3)
+        var defensiveLinebreaks = 4
+        var scrums = 6
+        var lineouts = 2
+        var offensiveLinebreaks = 4
+        var tries = Int.random(in: 2...4) // Randomize tries
         
-        let totalEvents = tries + defaultScrums + defaultLineouts
-        
-        var avgInterval = 420 / totalEvents
-        
-        print(avgInterval)
-        
-        /*
-        if intensity == 1 {
-            // 3 less defensive linebreaks
-            defaultDefensiveLinebreaks -= 3
-            
-            // 3 more scrums
-            defaultScrums += 3
-            
-            // 3 more lineouts
-            defaultLineouts += 3
-            
-            // 2 less linebreaks
-            defaultOffensiveLinebreaks -= 2
-            
-            
-        }
-        if intensity == 2 {
-            
-            
-            
-        }
-         */
-        
-        // TODO: Space out events
-
-        if intensity >= 3 && defaultDefensiveLinebreaks != 0 {
-            print("Poach")
-            
+        // Increase or decrease events based on intensity level
+        switch intensity {
+        case 1:
+            defensiveLinebreaks -= 3
+            scrums += 3
+            lineouts += 2
+            offensiveLinebreaks -= 2
+        case 2:
+            defensiveLinebreaks -= 2
+            scrums += 2
+            lineouts += 1
+            offensiveLinebreaks -= 1
+        case 4:
+            defensiveLinebreaks += 2
+            scrums -= 1
+            lineouts -= 1
+            offensiveLinebreaks += 2
+        case 5:
+            defensiveLinebreaks += 3
+            scrums -= 2
+            lineouts -= 1
+            offensiveLinebreaks += 3
+        default:
+            break
         }
         
-        // TODO: Add timings
+        // Total number of events for each half (420 seconds)
+        let totalEvents = defensiveLinebreaks + scrums + lineouts + offensiveLinebreaks + tries
+        let avgInterval = 420 / totalEvents
         
+        // Initialize the timeline with kickoff events
+        var timeline: [(Int, String)] = [(0, "Kickoff")]
         
-        // TODO: Add kickoff to the beginning of both arrays
-        return [(0, "Kickoff"), (420, "Halftime"), (480, "Kickoff"), (900, "Full-time")]
+        // Populate the timeline with game events, spaced out
+        var currentTime = 0
         
+        // Add events based on calculated intervals
+        for _ in 1...defensiveLinebreaks {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Defensive Linebreak"))
+        }
+        
+        for _ in 1...scrums {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Scrum"))
+        }
+        
+        for _ in 1...lineouts {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Lineout"))
+        }
+        
+        for _ in 1...offensiveLinebreaks {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Offensive Linebreak"))
+        }
+        
+        for _ in 1...tries {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Try"))
+        }
+        
+        // Add halftime and second-half kickoff
+        timeline.append((420, "Halftime"))
+        timeline.append((480, "Kickoff"))
+        
+        // Second half repeats the same process
+        currentTime = 480
+        for _ in 1...defensiveLinebreaks {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Defensive Linebreak"))
+        }
+        
+        for _ in 1...scrums {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Scrum"))
+        }
+        
+        for _ in 1...lineouts {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Lineout"))
+        }
+        
+        for _ in 1...offensiveLinebreaks {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Offensive Linebreak"))
+        }
+        
+        for _ in 1...tries {
+            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
+            timeline.append((currentTime, "Try"))
+        }
+        
+        // End the game at full-time
+        timeline.append((900, "Full-time"))
+        
+        return timeline.sorted { $0.0 < $1.0 } // Return sorted timeline by time
     }
     
 }
