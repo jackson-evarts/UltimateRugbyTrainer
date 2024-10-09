@@ -107,6 +107,7 @@ struct GameSimulationView: View {
                     
                     
                     BouncingSlider(value: $intensity, colorSchemeModel: colorSchemeModel)
+                        .padding(.horizontal, 30)
                     
                     NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: colorSchemeModel)){
                         Text("Play at Intensity \(Int(intensity))")
