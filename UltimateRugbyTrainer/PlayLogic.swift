@@ -31,10 +31,14 @@ class PlayLogic: ObservableObject {
     
     
     
-    // Precondition: The user has selected an intensity level (1-5) which is passed to this function as they click 'Play'
-    // ======
-    // Postcondition: The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
-    // NOTE: This function's outline and description was built by Jackson, but the specific code was written by ChatGPT circa 20241009
+    /*
+     Precondition: The user has selected an intensity level (1-5) which is passed to this function as they click 'Play'
+     =====
+     Postcondition: The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
+     =====
+     Author: Jackson Evarts (Outline), ChatGPT (Base functionality)
+     */
+    
     func buildGame(intensity: Int) -> [(Int, String)] {
         
         // Adjustments based on intensity level (default for intensity 3)
