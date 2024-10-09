@@ -24,12 +24,12 @@ class PlayLogic: ObservableObject {
     
     
     
-    // TODO: Create default game-timelines / arrays for each intensity
-    
     func stopTimer() {
         timer?.invalidate()
         timer = nil
     }
+    
+    
     
     // Precondition: The user has selected an intensity level (1-5) which is passed to this function as they click 'Play'
     // ======
