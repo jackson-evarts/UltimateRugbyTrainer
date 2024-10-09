@@ -32,11 +32,14 @@ class PlayLogic: ObservableObject {
     
     
     /*
-     Precondition: The user has selected an intensity level (1-5) which is passed to this function as they click 'Play'
+     Precondition: 
+     The user has selected an intensity level (1-5) which is passed to this function as they click 'Play'
      =====
-     Postcondition: The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
+     Postcondition: 
+     The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
      =====
-     Author: Jackson Evarts (Outline), ChatGPT (Base functionality)
+     Author: 
+     Jackson Evarts (Outline), ChatGPT (Base functionality)
      */
     
     func buildGame(intensity: Int) -> [(Int, String)] {
@@ -46,7 +49,7 @@ class PlayLogic: ObservableObject {
         var scrums = 6
         var lineouts = 2
         var offensiveLinebreaks = 4
-        var tries = Int.random(in: 2...4) // Randomize tries
+        let tries = Int.random(in: 2...4) // Randomize tries
         
         // Increase or decrease events based on intensity level
         switch intensity {
