@@ -70,6 +70,15 @@ struct SettingsView: View {
                     .underline(true, color: Color.black) // Underline with a custom color (optional)
 
 
+                HStack{
+                    Spacer()
+                    NavigationLink(destination: FootballView()){
+                        PixelTextForButton(label: "Football")
+                            .padding(.horizontal, 50)
+
+                    }
+                }
+                
                 Button("USA Color Scheme") {
                     colorSchemeModel.colorScheme = USAColors() // Set USA colors
                 }

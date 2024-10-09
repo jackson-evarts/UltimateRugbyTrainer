@@ -23,6 +23,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all) // Fill entire background
                 
                 VStack {
+                    
                     // Display the image
                     Image("title") // Refer to the image by its name in the assets
                         .resizable()
@@ -37,13 +38,13 @@ struct ContentView: View {
                     NavigationLink(destination: SettingsView(colorSchemeModel: colorSchemeModel)) {
                         PixelTextForButton(label: "Settings")
                     }
-
-                     
+                    
+                    
                     
                     // Game Simulation Button
                     NavigationLink(destination: GameSimulationView(colorSchemeModel: colorSchemeModel)) {
                         PixelTextForButton(label: "Game Simulation")
-
+                        
                     }
                     
                     // Bronco Trainer Button (disabled)
@@ -53,6 +54,9 @@ struct ContentView: View {
                         .font(.custom("NFPixels-Regular", size: 20))
                         .foregroundColor(colorSchemeModel.colorScheme.D1)
                     Spacer()
+                    
+                    
+                    
                 }
                 .padding() // Add padding to avoid content getting too close to the edges
             }
