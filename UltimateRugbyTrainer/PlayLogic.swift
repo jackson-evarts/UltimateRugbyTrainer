@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 import Combine
+import AVFoundation
+
 
 class PlayLogic: ObservableObject {
     @Published var elapsedTime: Int = 0
@@ -148,6 +150,17 @@ class PlayLogic: ObservableObject {
         timeline.append((900, "Full-time"))
         
         return timeline.sorted { $0.0 < $1.0 } // Return sorted timeline by time
+    }
+    
+    // Function to set up the audio session for background playback and mixing
+    func setupAudioSession() {
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.playback, options: [.mixWithOthers, .duckOthers]) // Allow mixing and ducking
+            try audioSession.setActive(true) // Activate the session
+        } catch {
+            print("Error setting up audio session: \(error.localizedDescription)")
+        }
     }
     
 }

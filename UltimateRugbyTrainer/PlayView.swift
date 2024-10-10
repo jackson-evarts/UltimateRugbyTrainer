@@ -32,7 +32,6 @@ struct PlayView: View {
                 Text("Elapsed Time: \(formattedTime)")
                     .foregroundColor(.white)
                 
-                // TODO: Display what half it is. Do not show time left in half!
                 Text("Triple Tap to Return to Menu")
                     .foregroundColor(.white)
                 
@@ -45,6 +44,8 @@ struct PlayView: View {
             .onDisappear(){ // Timer stops when the view is put away
                 playLogic.stopTimer()
             }
+            
+            
             
             
         }
