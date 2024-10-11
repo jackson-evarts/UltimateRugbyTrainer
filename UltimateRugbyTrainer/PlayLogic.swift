@@ -13,9 +13,7 @@ import AVFoundation
 
 class PlayLogic: ObservableObject {
     @Published var elapsedTime: Int = 0
-    
-    // TODO: Bring intensity slider selection here
-    
+    @State private var audioPlayer: AVAudioPlayer?
     var timer: Timer?
     
     func startTimer() {
@@ -24,14 +22,10 @@ class PlayLogic: ObservableObject {
         }
     }
     
-    
-    
     func stopTimer() {
         timer?.invalidate()
         timer = nil
     }
-    
-    
     
     /*
      Precondition: 
@@ -152,6 +146,7 @@ class PlayLogic: ObservableObject {
         return timeline.sorted { $0.0 < $1.0 } // Return sorted timeline by time
     }
     
+
     // Function to set up the audio session for background playback and mixing
     func setupAudioSession() {
         do {
@@ -161,6 +156,42 @@ class PlayLogic: ObservableObject {
         } catch {
             print("Error setting up audio session: \(error.localizedDescription)")
         }
+    }
+    
+    /*
+     Precondition:
+     The passed variable "sound" is a valid .m4a file inside the app folder.
+     =====
+     Postcondition:
+     The correlated audio to the details passed is played for the user.
+     =====
+     Author:
+     Jackson Evarts via ChatGPT
+     */
+    func playSound(sound: String, type: String = ".m4a") {
+        if let path = Bundle.main.path(forResource: sound, ofType: type) {
+            let url = URL(fileURLWithPath: path)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    /*
+     Precondition:
+     ???
+     =====
+     Postcondition:
+     Each time the time hits a time that is in the gameEvents array, I want the program to play the correlated sound associated with the string that is in the gameEvents array.
+     
+     
+     */
+    func eventManagement(gameEvents: [(Int, String)], time: Int){
+        
+        
     }
     
 }
