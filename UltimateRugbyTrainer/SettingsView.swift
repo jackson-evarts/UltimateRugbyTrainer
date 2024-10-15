@@ -19,10 +19,12 @@ struct SettingsView: View {
     
     var body: some View {
         HStack{
-            Spacer()
             NavigationLink(destination: FootballView()){
                 PixelTextForButton(label: "Football")
-                    .padding(.horizontal, 50)
+                
+            }
+            NavigationLink(destination: ContentView()){
+                PixelTextForButton(label: "Rugby")
                 
             }
         }
