@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @ObservedObject var colorSchemeModel: ColorSchemeModel
+
     /*
-     TO USE CUSTOM COLORS:
-     colorSchemeModel.colorScheme.[D1, D2, D3, D4, or D5]
+     Color Scheme:
+     Color.white
+     Color.lightBlueUSA
+     Color.midBlueUSA
+     Color.darkBlueUSA
+     Color.redUSA
      */
     
     var body: some View {
         NavigationStack {
             ZStack {
                 // Background color filling the entire screen
-                colorSchemeModel.colorScheme.D2 // Background color
+                Color.lightBlueUSA // Background color
                     .edgesIgnoringSafeArea(.all) // Fill entire background
                 
                 VStack {
@@ -35,14 +38,14 @@ struct ContentView: View {
                     Spacer()
                     
                     // Settings Button
-                    NavigationLink(destination: SettingsView(colorSchemeModel: colorSchemeModel)) {
+                    NavigationLink(destination: SettingsView()) {
                         PixelTextForButton(label: "Settings")
                     }
                     
                     
                     
                     // Game Simulation Button
-                    NavigationLink(destination: GameSimulationView(colorSchemeModel: colorSchemeModel)) {
+                    NavigationLink(destination: GameSimulationView()) {
                         PixelTextForButton(label: "Game Simulation")
                         
                     }
@@ -52,7 +55,7 @@ struct ContentView: View {
                     
                     Text("Coming soon!")
                         .font(.custom("NFPixels-Regular", size: 20))
-                        .foregroundColor(colorSchemeModel.colorScheme.D1)
+                        .foregroundColor(.white)
                     Spacer()
                     
                     
@@ -70,5 +73,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView(colorSchemeModel: ColorSchemeModel())
+    ContentView()
 }
