@@ -35,9 +35,8 @@ class PlayLogic: ObservableObject {
      The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
      =====
      Author: 
-     Jackson Evarts (Outline), ChatGPT (Base functionality)
+     Jackson Evarts (Outline)
      */
-    
     func buildGame(intensity: Int) -> [(Int, String)] {
         
         // Adjustments based on intensity level (default for intensity 3)
@@ -166,7 +165,7 @@ class PlayLogic: ObservableObject {
      The correlated audio to the details passed is played for the user.
      =====
      Author:
-     Jackson Evarts via ChatGPT
+     Jackson Evarts
      */
     func playSound(sound: String, type: String = ".m4a") {
         if let path = Bundle.main.path(forResource: sound, ofType: type) {
@@ -180,12 +179,13 @@ class PlayLogic: ObservableObject {
         }
     }
     
+    
     /*
      Precondition:
      ???
      =====
      Postcondition:
-     Each time the time hits a time that is in the gameEvents array, I want the program to play the correlated sound associated with the string that is in the gameEvents array.
+     Each time the timer hits a time that is in the gameEvents array, I want the program to play the correlated sound associated with the string that is in the gameEvents array.
      
      
      */
