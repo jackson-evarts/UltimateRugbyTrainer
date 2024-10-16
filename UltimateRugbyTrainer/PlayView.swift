@@ -39,6 +39,8 @@ struct PlayView: View {
             }
             .onAppear{ // Start the timer immediately as the screen is brought up
                 playLogic.startTimer()
+                playLogic.setupAudioSession()
+                playLogic.playSound(sound: "Kickoff")
             }
             .onDisappear(){ // Timer stops when the view is put away
                 playLogic.stopTimer()
@@ -51,9 +53,16 @@ struct PlayView: View {
         .onAppear {
             // Animate the color change to black when the view appears
             backgroundColor = Color.lightBlueUSA
-            
             withAnimation(.easeInOut(duration: 3)) {
                 backgroundColor = Color.black
+                
+                playLogic.setupAudioSession()
+                
+                // Building the game and calling eventManagement function to play audios
+                playLogic.eventManagement(gameEvents: playLogic.buildGame(intensity: intensity))
+                
+                
+                
             }
         }
         .navigationBarBackButtonHidden(true)
