@@ -240,6 +240,8 @@ class PlayLogic: ObservableObject {
             // Check if the elapsed time matches the event time
             if currentTime >= nextEvent.0 {
                 // Play the audio based on the event type
+                
+                // TODO: Uncomment this. Testing audio player.
                 self.playSound(sound: nextEvent.1)
                 
                 // Move to the next event in the array

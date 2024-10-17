@@ -41,6 +41,10 @@ struct PlayView: View {
                 playLogic.startTimer()
                 playLogic.setupAudioSession()
                 playLogic.playSound(sound: "Kickoff")
+                
+                // Building the game and calling eventManagement function to play audios
+                playLogic.eventManagement(gameEvents: playLogic.buildGame(intensity: intensity))
+                
             }
             .onDisappear(){ // Timer stops when the view is put away
                 playLogic.stopTimer()
@@ -55,21 +59,13 @@ struct PlayView: View {
             backgroundColor = Color.lightBlueUSA
             withAnimation(.easeInOut(duration: 3)) {
                 backgroundColor = Color.black
-                
-                playLogic.setupAudioSession()
-                
-                // Building the game and calling eventManagement function to play audios
-                playLogic.eventManagement(gameEvents: playLogic.buildGame(intensity: intensity))
-                
-                
-                
             }
         }
         .navigationBarBackButtonHidden(true)
         .onTapGesture(count: 3) { // Detect triple tap
             dismiss() // Navigate back on triple tap
             playLogic.stopTimer()
-            playLogic.elapsedTime = 0
+            playLogic.elapsedTime = -5
         }
     }
     
