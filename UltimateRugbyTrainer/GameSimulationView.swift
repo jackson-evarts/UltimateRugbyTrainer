@@ -14,7 +14,6 @@ import SwiftUI
 
 struct GameSimulationView: View {
     @State private var intensity: Double = 1.0
-    @ObservedObject var colorSchemeModel: ColorSchemeModel
     @State private var currentImageIndex = 0
     @State private var timer: Timer?
     @State var timerSpeed: Double = 1.0
