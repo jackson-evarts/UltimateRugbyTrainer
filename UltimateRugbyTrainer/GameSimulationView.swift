@@ -89,7 +89,7 @@ struct GameSimulationView: View {
                 }
                 .onAppear{
                     startTimer()
-                }.onChange(of: intensity) { newValue in
+                }.onChange(of: intensity) {
                     startTimer() // Restart timer when intensity changes
                 }
                 .onDisappear {
