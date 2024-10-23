@@ -31,11 +31,12 @@ struct ContentView: View {
                     Image("title") // Refer to the image by its name in the assets
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 400, height: 400)
+                        .frame(width: 400, height: 200)
+                    Image("Rugby Ball")
+                        .resizable()
+                        .frame(width: 200, height: 200)
                         .padding()
                     
-                    
-                    Spacer()
                     
                     // Settings Button
                     NavigationLink(destination: SettingsView()) {
