@@ -10,6 +10,13 @@
 		A321D4892CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */; };
 		A321D4902CB17DB700ECFB96 /* BuildGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */; };
 		A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38AB2042CA0DE6600367011 /* TutorialView.swift */; };
+		A395A20D2CB9841200C092A4 /* Kickoff.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A20C2CB9841200C092A4 /* Kickoff.m4a */; };
+		A395A20F2CB986A800C092A4 /* DefensiveLinebreak.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A20E2CB986A800C092A4 /* DefensiveLinebreak.m4a */; };
+		A395A2112CB9870600C092A4 /* Scrum.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2102CB9870600C092A4 /* Scrum.m4a */; };
+		A395A2132CB9873500C092A4 /* Lineout.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2122CB9873500C092A4 /* Lineout.m4a */; };
+		A395A2152CB9876700C092A4 /* OffensiveLinebreak.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2142CB9876700C092A4 /* OffensiveLinebreak.m4a */; };
+		A395A2172CB9878F00C092A4 /* Try.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2162CB9878F00C092A4 /* Try.m4a */; };
+		A395A2192CB987B300C092A4 /* Halftime.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2182CB987B300C092A4 /* Halftime.m4a */; };
 		A3A680DC2CAEF4F400B061E5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */; };
 		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
 		A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */; };
@@ -41,6 +48,13 @@
 		A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateRugbyTrainerTests.swift; sourceTree = "<group>"; };
 		A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildGameTests.swift; sourceTree = "<group>"; };
 		A38AB2042CA0DE6600367011 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		A395A20C2CB9841200C092A4 /* Kickoff.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kickoff.m4a; sourceTree = "<group>"; };
+		A395A20E2CB986A800C092A4 /* DefensiveLinebreak.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = DefensiveLinebreak.m4a; sourceTree = "<group>"; };
+		A395A2102CB9870600C092A4 /* Scrum.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Scrum.m4a; sourceTree = "<group>"; };
+		A395A2122CB9873500C092A4 /* Lineout.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lineout.m4a; sourceTree = "<group>"; };
+		A395A2142CB9876700C092A4 /* OffensiveLinebreak.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = OffensiveLinebreak.m4a; sourceTree = "<group>"; };
+		A395A2162CB9878F00C092A4 /* Try.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Try.m4a; sourceTree = "<group>"; };
+		A395A2182CB987B300C092A4 /* Halftime.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Halftime.m4a; sourceTree = "<group>"; };
 		A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
 		A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NFPixels-Regular.ttf"; sourceTree = "<group>"; };
@@ -86,6 +100,20 @@
 			path = UltimateRugbyTrainerTests;
 			sourceTree = "<group>";
 		};
+		A395A20B2CB983FE00C092A4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A395A20C2CB9841200C092A4 /* Kickoff.m4a */,
+				A395A2102CB9870600C092A4 /* Scrum.m4a */,
+				A395A2122CB9873500C092A4 /* Lineout.m4a */,
+				A395A2162CB9878F00C092A4 /* Try.m4a */,
+				A395A2142CB9876700C092A4 /* OffensiveLinebreak.m4a */,
+				A395A2182CB987B300C092A4 /* Halftime.m4a */,
+				A395A20E2CB986A800C092A4 /* DefensiveLinebreak.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		A3F49E3C2C8A18C6003A0E1D = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +135,7 @@
 		A3F49E472C8A18C6003A0E1D /* UltimateRugbyTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				A395A20B2CB983FE00C092A4 /* Sounds */,
 				A3DB7C022C8B8D3E005F1DF6 /* Info.plist */,
 				A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */,
 				A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */,
@@ -223,7 +252,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A395A2152CB9876700C092A4 /* OffensiveLinebreak.m4a in Resources */,
+				A395A20D2CB9841200C092A4 /* Kickoff.m4a in Resources */,
 				A3F49E502C8A18C7003A0E1D /* Preview Assets.xcassets in Resources */,
+				A395A2172CB9878F00C092A4 /* Try.m4a in Resources */,
+				A395A2192CB987B300C092A4 /* Halftime.m4a in Resources */,
+				A395A20F2CB986A800C092A4 /* DefensiveLinebreak.m4a in Resources */,
+				A395A2132CB9873500C092A4 /* Lineout.m4a in Resources */,
+				A395A2112CB9870600C092A4 /* Scrum.m4a in Resources */,
 				A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */,
 				A3F49E4D2C8A18C7003A0E1D /* Assets.xcassets in Resources */,
 			);

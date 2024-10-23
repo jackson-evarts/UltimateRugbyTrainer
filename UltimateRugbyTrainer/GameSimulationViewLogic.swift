@@ -10,7 +10,6 @@ import Foundation
 
 struct BouncingSlider: View {
     @Binding var value: Double // The current value of the slider (1-5)
-    @ObservedObject var colorSchemeModel: ColorSchemeModel
     
     var range: ClosedRange<Double> = 1...5 // Default range from 1 to 5
     var step: Double = 1 // Slider step size
@@ -35,16 +34,16 @@ struct BouncingSlider: View {
                 
                 // Filled track
                 Rectangle()
-                    .fill(colorSchemeModel.colorScheme.D5)
+                    .fill(Color.redUSA)
                     .frame(width: thumbPosition + thumbSize / 2, height: 6)
                     .cornerRadius(3)
                 
                 // Thumb (draggable)
                 Circle()
-                    .fill(colorSchemeModel.colorScheme.D5)
+                    .fill(Color.redUSA)
                     .frame(width: thumbSize, height: thumbSize)
                     .overlay(
-                        Circle().stroke(colorSchemeModel.colorScheme.D4, lineWidth: 3.5) // Add border to thumb
+                        Circle().stroke(Color.darkBlueUSA, lineWidth: 3.5) // Add border to thumb
                     )
                     .offset(x: thumbPosition)
                     .gesture(

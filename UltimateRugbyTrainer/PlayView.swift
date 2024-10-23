@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PlayView: View {
     var intensity: Int
-    @ObservedObject var colorSchemeModel: ColorSchemeModel
     @ObservedObject var playLogic = PlayLogic()
     @State private var backgroundColor: Color = .clear // Initialize with a default value (e.g., .clear)
     
@@ -32,7 +31,6 @@ struct PlayView: View {
                 Text("Elapsed Time: \(formattedTime)")
                     .foregroundColor(.white)
                 
-                // TODO: Display what half it is. Do not show time left in half!
                 Text("Triple Tap to Return to Menu")
                     .foregroundColor(.white)
                 
@@ -41,17 +39,24 @@ struct PlayView: View {
             }
             .onAppear{ // Start the timer immediately as the screen is brought up
                 playLogic.startTimer()
+                playLogic.setupAudioSession()
+                playLogic.playSound(sound: "Kickoff")
+                
+                // Building the game and calling eventManagement function to play audios
+                playLogic.eventManagement(gameEvents: playLogic.buildGame(intensity: intensity))
+                
             }
             .onDisappear(){ // Timer stops when the view is put away
                 playLogic.stopTimer()
             }
             
             
+            
+            
         }
         .onAppear {
             // Animate the color change to black when the view appears
-            backgroundColor = colorSchemeModel.colorScheme.D2
-            
+            backgroundColor = Color.lightBlueUSA
             withAnimation(.easeInOut(duration: 3)) {
                 backgroundColor = Color.black
             }
@@ -60,12 +65,12 @@ struct PlayView: View {
         .onTapGesture(count: 3) { // Detect triple tap
             dismiss() // Navigate back on triple tap
             playLogic.stopTimer()
-            playLogic.elapsedTime = 0
+            playLogic.elapsedTime = -5
         }
     }
     
 }
 
 #Preview {
-    PlayView(intensity: 3, colorSchemeModel: ColorSchemeModel())
+    PlayView(intensity: 3)
 }
