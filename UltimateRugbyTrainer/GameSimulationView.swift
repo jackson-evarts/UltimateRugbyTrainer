@@ -14,8 +14,6 @@ import SwiftUI
 
 struct GameSimulationView: View {
     @State private var intensity: Double = 1.0
-    @ObservedObject var colorSchemeModel: ColorSchemeModel
-    
     
     var body: some View {
         
@@ -23,7 +21,7 @@ struct GameSimulationView: View {
             
             ZStack{
                 // Background color filling the entire screen
-                colorSchemeModel.colorScheme.D2 // Background color
+                Color.lightBlueUSA
                     .edgesIgnoringSafeArea(.all) // Fill entire background
                 
                 VStack {
@@ -42,23 +40,23 @@ struct GameSimulationView: View {
                     
                     Text("Intensity") // Display current intensity as an integer
                         .font(.custom("NFPixels-Regular", size: 30))
-                        .foregroundColor(colorSchemeModel.colorScheme.D1)
+                        .foregroundColor(.white)
                     
                     
                     
-                    BouncingSlider(value: $intensity, colorSchemeModel: colorSchemeModel)
+                    BouncingSlider(value: $intensity)
                         .padding(.horizontal, 30)
                     
-                    NavigationLink(destination: PlayView(intensity: Int(intensity), colorSchemeModel: colorSchemeModel)){
+                    NavigationLink(destination: PlayView(intensity: Int(intensity))){
                         Text("Play at Intensity \(Int(intensity))")
                             .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
-                            .background(colorSchemeModel.colorScheme.D5)
-                            .foregroundColor(colorSchemeModel.colorScheme.D1)
+                            .background(Color.redUSA)
+                            .foregroundColor(.white)
                             .cornerRadius(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.D4, lineWidth: 5)
+                                    .stroke(Color.darkBlueUSA, lineWidth: 5)
                             )
                             .padding()
                     }
@@ -68,12 +66,12 @@ struct GameSimulationView: View {
                         Text("Tutorial")
                             .font(.custom("NFPixels-Regular", size: 30))
                             .padding()
-                            .background(colorSchemeModel.colorScheme.D4)
-                            .foregroundColor(colorSchemeModel.colorScheme.D1)
+                            .background(Color.darkBlueUSA)
+                            .foregroundColor(.white)
                             .cornerRadius(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .stroke(colorSchemeModel.colorScheme.D3, lineWidth: 5)
+                                    .stroke(Color.midBlueUSA, lineWidth: 5)
                             )
                     }
                     
@@ -88,5 +86,5 @@ struct GameSimulationView: View {
 }
 
 #Preview {
-    GameSimulationView(colorSchemeModel: ColorSchemeModel())
+    GameSimulationView()
 }

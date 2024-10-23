@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import AVFoundation
 
 struct PixelTextForButton: View{
     var label: String
