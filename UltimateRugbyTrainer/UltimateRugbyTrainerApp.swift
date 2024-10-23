@@ -12,7 +12,7 @@ struct UltimateRugbyTrainerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SettingsView()
         }
     }
 }
