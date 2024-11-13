@@ -158,7 +158,7 @@ struct PlayView: View {
             if currentTime >= nextEvent.0 {
                 // Play the audio based on the event type
                 
-                // TODO: Uncomment this. Testing audio player.
+                print("\(nextEvent) sound playing at \(currentTime).")
                 playSound(sound: nextEvent.1)
                 
                 // Move to the next event in the array
