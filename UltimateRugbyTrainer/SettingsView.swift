@@ -18,13 +18,17 @@ extension Color {
 struct SettingsView: View {
     
     var body: some View {
-        HStack{
+        VStack{
             NavigationLink(destination: FootballView()){
                 PixelTextForButton(label: "Football")
                 
             }
             NavigationLink(destination: ContentView()){
                 PixelTextForButton(label: "Rugby")
+                
+            }
+            NavigationLink(destination: HockeyView()){
+                PixelTextForButton(label: "Hockey")
                 
             }
         }
