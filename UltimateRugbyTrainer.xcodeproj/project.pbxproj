@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6D7FE12CE56B4D0084C6ED /* HockeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D7FDE2CE56B4D0084C6ED /* HockeyView.swift */; };
+		0C6D7FE22CE56B4D0084C6ED /* HockeySimViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D7FDF2CE56B4D0084C6ED /* HockeySimViewLogic.swift */; };
+		0C6D7FE32CE56B4D0084C6ED /* HockeySimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D7FE02CE56B4D0084C6ED /* HockeySimView.swift */; };
 		A321D4892CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */; };
 		A321D4902CB17DB700ECFB96 /* BuildGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */; };
 		A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38AB2042CA0DE6600367011 /* TutorialView.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C6D7FDE2CE56B4D0084C6ED /* HockeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeyView.swift; sourceTree = "<group>"; };
+		0C6D7FDF2CE56B4D0084C6ED /* HockeySimViewLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeySimViewLogic.swift; sourceTree = "<group>"; };
+		0C6D7FE02CE56B4D0084C6ED /* HockeySimView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeySimView.swift; sourceTree = "<group>"; };
 		A321D4862CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimateRugbyTrainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateRugbyTrainerTests.swift; sourceTree = "<group>"; };
 		A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildGameTests.swift; sourceTree = "<group>"; };
@@ -142,6 +148,9 @@
 				A3EAD7EB2CA5AF02005FE69A /* PlayLogic.swift */,
 				A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */,
 				A3F25D6F2CB7512D003FF37A /* FrameByFrameView.swift */,
+				0C6D7FE02CE56B4D0084C6ED /* HockeySimView.swift */,
+				0C6D7FDF2CE56B4D0084C6ED /* HockeySimViewLogic.swift */,
+				0C6D7FDE2CE56B4D0084C6ED /* HockeyView.swift */,
 				A3F25D712CB7514B003FF37A /* FrameByFrameManager.swift */,
 				A3F25D6D2CB74F84003FF37A /* FootballView.swift */,
 				A3F25D6B2CB74301003FF37A /* ContentViewLogic.swift */,
@@ -287,11 +296,14 @@
 				A3EAD7EA2CA4EB55005FE69A /* PlayView.swift in Sources */,
 				A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */,
 				A3EAD7EC2CA5AF02005FE69A /* PlayLogic.swift in Sources */,
+				0C6D7FE22CE56B4D0084C6ED /* HockeySimViewLogic.swift in Sources */,
+				0C6D7FE12CE56B4D0084C6ED /* HockeyView.swift in Sources */,
 				A3F25D6E2CB74F84003FF37A /* FootballView.swift in Sources */,
 				A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */,
 				A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */,
 				A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */,
 				A3F25D6A2CB7429A003FF37A /* GameSimulationViewLogic.swift in Sources */,
+				0C6D7FE32CE56B4D0084C6ED /* HockeySimView.swift in Sources */,
 				A3F25D702CB7512D003FF37A /* FrameByFrameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
