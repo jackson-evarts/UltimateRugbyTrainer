@@ -18,10 +18,7 @@ struct PlayView: View {
     @State private var elapsedTime: Int = -5
     @State private var audioPlayer: AVAudioPlayer?
     @State private var timer: Timer?
-
     @Environment(\.dismiss) var dismiss // Used to help navigate back on triple click
-    
-    
     
     var body: some View {
         ZStack{
@@ -195,8 +192,105 @@ struct PlayView: View {
      Author:
      Jackson Evarts
      */
-    
     func buildGame(intensity: Int) -> [(Int, String)] {
+        var defensiveLinebreaks = 4
+        var scrums = 6
+        var lineouts = 2
+        var offensiveLinebreaks = 4
+        let tries = Int.random(in: 2...4)
+        
+        switch intensity {
+        case 1:
+            defensiveLinebreaks -= 3
+            scrums += 3
+            lineouts += 2
+            offensiveLinebreaks -= 2
+        case 2:
+            defensiveLinebreaks -= 2
+            scrums += 2
+            lineouts += 1
+            offensiveLinebreaks -= 1
+        case 4:
+            defensiveLinebreaks += 2
+            scrums -= 1
+            lineouts -= 1
+            offensiveLinebreaks += 2
+        case 5:
+            defensiveLinebreaks += 3
+            scrums -= 2
+            lineouts -= 1
+            offensiveLinebreaks += 3
+        default:
+            break
+        }
+        
+        var timeline: [(Int, String)] = [(0, "Kickoff")]
+        var currentTime = 0
+        let avgInterval = 420 / (defensiveLinebreaks + scrums + lineouts + offensiveLinebreaks + tries)
+        
+        func addEvent(_ event: String, delay: Int = 0) {
+            currentTime += delay
+            timeline.append((currentTime, event))
+        }
+        
+        // Randomized event types excluding ordered ones
+        let baseEvents = Array(repeating: "Scrum", count: scrums) +
+                         Array(repeating: "Lineout", count: lineouts)
+        
+        var randomizedEvents = baseEvents.shuffled() // Randomize non-specific events
+        
+        // First half events
+        for _ in 1...defensiveLinebreaks {
+            addEvent("DefensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
+            addEvent("TacklePoach", delay: Int.random(in: 2...5))
+            addEvent("Try", delay: Int.random(in: 2...5))
+        }
+        
+        for _ in 1...offensiveLinebreaks {
+            addEvent("OffensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
+            addEvent("Tackle", delay: Int.random(in: 2...5))
+            addEvent("Try", delay: Int.random(in: 2...5))
+        }
+        
+        // Insert remaining randomized events in the first half
+        for event in randomizedEvents {
+            addEvent(event, delay: Int.random(in: avgInterval - 10...avgInterval + 10))
+        }
+        
+        addEvent("Halftime", delay: 420 - currentTime) // Ensure halftime at 420 seconds
+        addEvent("Kickoff", delay: 60) // Start second half at 480 seconds
+        
+        // Reset currentTime for second half
+        currentTime = 480
+        
+        // Regenerate and shuffle events for second half
+        randomizedEvents = baseEvents.shuffled()
+        
+        // Second half events
+        for _ in 1...defensiveLinebreaks {
+            addEvent("DefensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
+            addEvent("TacklePoach", delay: Int.random(in: 2...5))
+            addEvent("Try", delay: Int.random(in: 2...5))
+        }
+        
+        for _ in 1...offensiveLinebreaks {
+            addEvent("OffensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
+            addEvent("Tackle", delay: Int.random(in: 2...5))
+            addEvent("Try", delay: Int.random(in: 2...5))
+        }
+        
+        // Insert remaining randomized events in the second half
+        for event in randomizedEvents {
+            addEvent(event, delay: Int.random(in: avgInterval - 10...avgInterval + 10))
+        }
+        
+        addEvent("Full-time", delay: 900 - currentTime) // Ensure full-time at 900 seconds
+        
+        return timeline.sorted { $0.0 < $1.0 }
+    }
+    
+    // buildGame DRAFT 1
+/*    func buildGame(intensity: Int) -> [(Int, String)] {
         
         // Adjustments based on intensity level (default for intensity 3)
         var defensiveLinebreaks = 4
@@ -302,7 +396,7 @@ struct PlayView: View {
         timeline.append((900, "Full-time"))
         
         return timeline.sorted { $0.0 < $1.0 } // Return sorted timeline by time
-    }
+    }    */
     
     
 }
