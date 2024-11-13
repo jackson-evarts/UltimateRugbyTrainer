@@ -197,7 +197,7 @@ struct PlayView: View {
         var scrums = 6
         var lineouts = 2
         var offensiveLinebreaks = 4
-        let tries = Int.random(in: 2...4)
+        let totalTries = Int.random(in: 2...6)  // Randomize number of tries
         
         switch intensity {
         case 1:
@@ -226,34 +226,46 @@ struct PlayView: View {
         
         var timeline: [(Int, String)] = [(0, "Kickoff")]
         var currentTime = 0
-        let avgInterval = 420 / (defensiveLinebreaks + scrums + lineouts + offensiveLinebreaks + tries)
+        let avgInterval = 420 / (defensiveLinebreaks + scrums + lineouts + offensiveLinebreaks)
         
+        // Function to add events with optional delay
         func addEvent(_ event: String, delay: Int = 0) {
             currentTime += delay
             timeline.append((currentTime, event))
         }
         
+        // Calculate rough intervals for try events throughout the game
+        let tryIntervals = 900 / (totalTries + 1) // Divides game time into segments for tries
+        var nextTryTime = tryIntervals
+        
         // Randomized event types excluding ordered ones
         let baseEvents = Array(repeating: "Scrum", count: scrums) +
                          Array(repeating: "Lineout", count: lineouts)
-        
         var randomizedEvents = baseEvents.shuffled() // Randomize non-specific events
         
-        // First half events
+        // First half events with ordered linebreak rules
         for _ in 1...defensiveLinebreaks {
             addEvent("DefensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
             addEvent("TacklePoach", delay: Int.random(in: 2...5))
-            addEvent("Try", delay: Int.random(in: 2...5))
+            
+            if currentTime >= nextTryTime && totalTries > 0 {
+                addEvent("Try", delay: Int.random(in: 2...5))
+                nextTryTime += tryIntervals
+            }
         }
         
         for _ in 1...offensiveLinebreaks {
             addEvent("OffensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
             addEvent("Tackle", delay: Int.random(in: 2...5))
-            addEvent("Try", delay: Int.random(in: 2...5))
+            
+            if currentTime >= nextTryTime && totalTries > 0 {
+                addEvent("Try", delay: Int.random(in: 2...5))
+                nextTryTime += tryIntervals
+            }
         }
         
         // Insert remaining randomized events in the first half
-        for event in randomizedEvents {
+        for event in randomizedEvents.prefix(randomizedEvents.count / 2) {
             addEvent(event, delay: Int.random(in: avgInterval - 10...avgInterval + 10))
         }
         
@@ -262,21 +274,27 @@ struct PlayView: View {
         
         // Reset currentTime for second half
         currentTime = 480
-        
-        // Regenerate and shuffle events for second half
-        randomizedEvents = baseEvents.shuffled()
+        randomizedEvents = randomizedEvents.suffix(randomizedEvents.count / 2).shuffled() // Shuffle again for second half
         
         // Second half events
         for _ in 1...defensiveLinebreaks {
             addEvent("DefensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
             addEvent("TacklePoach", delay: Int.random(in: 2...5))
-            addEvent("Try", delay: Int.random(in: 2...5))
+            
+            if currentTime >= nextTryTime && totalTries > 0 {
+                addEvent("Try", delay: Int.random(in: 2...5))
+                nextTryTime += tryIntervals
+            }
         }
         
         for _ in 1...offensiveLinebreaks {
             addEvent("OffensiveLinebreak", delay: Int.random(in: avgInterval - 10...avgInterval + 10))
             addEvent("Tackle", delay: Int.random(in: 2...5))
-            addEvent("Try", delay: Int.random(in: 2...5))
+            
+            if currentTime >= nextTryTime && totalTries > 0 {
+                addEvent("Try", delay: Int.random(in: 2...5))
+                nextTryTime += tryIntervals
+            }
         }
         
         // Insert remaining randomized events in the second half
@@ -288,115 +306,7 @@ struct PlayView: View {
         
         return timeline.sorted { $0.0 < $1.0 }
     }
-    
-    // buildGame DRAFT 1
-/*    func buildGame(intensity: Int) -> [(Int, String)] {
-        
-        // Adjustments based on intensity level (default for intensity 3)
-        var defensiveLinebreaks = 4
-        var scrums = 6
-        var lineouts = 2
-        var offensiveLinebreaks = 4
-        let tries = Int.random(in: 2...4) // Randomize number of tries
-        
-        // Increase or decrease events based on intensity level
-        switch intensity {
-        case 1:
-            defensiveLinebreaks -= 3
-            scrums += 3
-            lineouts += 2
-            offensiveLinebreaks -= 2
-        case 2:
-            defensiveLinebreaks -= 2
-            scrums += 2
-            lineouts += 1
-            offensiveLinebreaks -= 1
-        case 4:
-            defensiveLinebreaks += 2
-            scrums -= 1
-            lineouts -= 1
-            offensiveLinebreaks += 2
-        case 5:
-            defensiveLinebreaks += 3
-            scrums -= 2
-            lineouts -= 1
-            offensiveLinebreaks += 3
-        default:
-            break
-        }
-        
-        // Total number of events for each half (420 seconds)
-        let totalEvents = defensiveLinebreaks + scrums + lineouts + offensiveLinebreaks + tries
-        let avgInterval = 420 / totalEvents
-        
-        // Initialize the timeline with kickoff events
-        var timeline: [(Int, String)] = [(0, "Kickoff")]
-        
-        // Populate the timeline with game events, spaced out
-        var currentTime = 0
-        
-        // Add events based on calculated intervals
-        for _ in 1...defensiveLinebreaks {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "DefensiveLinebreak"))
-        }
-        
-        for _ in 1...scrums {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Scrum"))
-        }
-        
-        for _ in 1...lineouts {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Lineout"))
-        }
-        
-        for _ in 1...offensiveLinebreaks {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "OffensiveLinebreak"))
-        }
-        
-        for _ in 1...tries {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Try"))
-        }
-        
-        // Add halftime and second-half kickoff
-        timeline.append((420, "Halftime"))
-        timeline.append((480, "Kickoff"))
-        
-        // Second half repeats the same process
-        currentTime = 480
-        for _ in 1...defensiveLinebreaks {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Defensive Linebreak"))
-        }
-        
-        for _ in 1...scrums {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Scrum"))
-        }
-        
-        for _ in 1...lineouts {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Lineout"))
-        }
-        
-        for _ in 1...offensiveLinebreaks {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Offensive Linebreak"))
-        }
-        
-        for _ in 1...tries {
-            currentTime += Int.random(in: avgInterval - 10...avgInterval + 10)
-            timeline.append((currentTime, "Try"))
-        }
-        
-        // End the game at full-time
-        timeline.append((900, "Full-time"))
-        
-        return timeline.sorted { $0.0 < $1.0 } // Return sorted timeline by time
-    }    */
+
     
     
 }
