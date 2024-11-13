@@ -57,8 +57,20 @@
 		A3F49E4F2C8A18C7003A0E1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A3FC4EFF2CE5581C004815F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Fulltime.m4a,
+				Tackle.m4a,
+				TacklePoach.m4a,
+			);
+			target = A321D4852CB0C8D500ECFB96 /* UltimateRugbyTrainerTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A3FC4EE72CE18AE5004815F3 /* Sounds */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sounds; sourceTree = "<group>"; };
+		A3FC4EE72CE18AE5004815F3 /* Sounds */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A3FC4EFF2CE5581C004815F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */

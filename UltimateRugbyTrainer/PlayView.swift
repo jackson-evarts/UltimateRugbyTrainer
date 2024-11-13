@@ -52,10 +52,9 @@ struct PlayView: View {
             setupAudioSession()
             
             // Building the game and calling eventManagement function to play audios
-            var gameList = buildGame(intensity: intensity)
+            let gameList = buildGame(intensity: intensity)
             eventManagement(gameEvents: gameList)
             print("The game: \(gameList)")
-        
         
             // Animate the color change to black when the view appears
             backgroundColor = Color.lightBlueUSA
@@ -91,7 +90,7 @@ struct PlayView: View {
      */
     func playSound(sound: String, type: String = "m4a") {
         if let path = Bundle.main.path(forResource: sound, ofType: type) {
-            print("Path found: \(path)") // Check if this is the correct path
+            // print("Path found: \(path)") // Check if this is the correct path
             let url = URL(fileURLWithPath: path)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: url)
@@ -177,10 +176,26 @@ struct PlayView: View {
      =====
      Postcondition:
      The function returns a list of tupils of type (Int, String) which represent timestamps of events in the game timeline such as the kickoff: (0, 'Kickoff')
+     Possible events include: DefensiveLinebreak, Fulltime, Halftime, Kickoff, Lineout, OffensiveLinebreak, Scrum, Tackle, TacklePoach, Try
+     Events should be random order besides these rules
+     
+     Rules:
+     Tries after offensive or defensive linebreaks
+     Tackles 2-5 seconds after offensive linebreaks
+     TacklePoach 2-5 after defensive linebreaks
+     Kickoff 30 seconds after a try is scored, unless that carries into Halftime
+     Kickoff 1 minute after Halftime
+     Fulltime at 900
+     Kickoff at 0
+     Halftime at 420
+     Kickoff for second half at 480
+     
+     
      =====
      Author:
-     Jackson Evarts (Outline)
+     Jackson Evarts
      */
+    
     func buildGame(intensity: Int) -> [(Int, String)] {
         
         // Adjustments based on intensity level (default for intensity 3)
@@ -188,7 +203,7 @@ struct PlayView: View {
         var scrums = 6
         var lineouts = 2
         var offensiveLinebreaks = 4
-        let tries = Int.random(in: 2...4) // Randomize tries
+        let tries = Int.random(in: 2...4) // Randomize number of tries
         
         // Increase or decrease events based on intensity level
         switch intensity {
