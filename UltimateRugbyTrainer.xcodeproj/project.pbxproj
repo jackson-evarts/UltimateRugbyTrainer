@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,18 +13,10 @@
 		A321D4892CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */; };
 		A321D4902CB17DB700ECFB96 /* BuildGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */; };
 		A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38AB2042CA0DE6600367011 /* TutorialView.swift */; };
-		A395A20D2CB9841200C092A4 /* Kickoff.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A20C2CB9841200C092A4 /* Kickoff.m4a */; };
-		A395A20F2CB986A800C092A4 /* DefensiveLinebreak.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A20E2CB986A800C092A4 /* DefensiveLinebreak.m4a */; };
-		A395A2112CB9870600C092A4 /* Scrum.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2102CB9870600C092A4 /* Scrum.m4a */; };
-		A395A2132CB9873500C092A4 /* Lineout.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2122CB9873500C092A4 /* Lineout.m4a */; };
-		A395A2152CB9876700C092A4 /* OffensiveLinebreak.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2142CB9876700C092A4 /* OffensiveLinebreak.m4a */; };
-		A395A2172CB9878F00C092A4 /* Try.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2162CB9878F00C092A4 /* Try.m4a */; };
-		A395A2192CB987B300C092A4 /* Halftime.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A395A2182CB987B300C092A4 /* Halftime.m4a */; };
 		A3A680DC2CAEF4F400B061E5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */; };
 		A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */; };
 		A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */; };
 		A3EAD7EA2CA4EB55005FE69A /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAD7E92CA4EB55005FE69A /* PlayView.swift */; };
-		A3EAD7EC2CA5AF02005FE69A /* PlayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAD7EB2CA5AF02005FE69A /* PlayLogic.swift */; };
 		A3F25D6A2CB7429A003FF37A /* GameSimulationViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F25D692CB7429A003FF37A /* GameSimulationViewLogic.swift */; };
 		A3F25D6C2CB74301003FF37A /* ContentViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F25D6B2CB74301003FF37A /* ContentViewLogic.swift */; };
 		A3F25D6E2CB74F84003FF37A /* FootballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F25D6D2CB74F84003FF37A /* FootballView.swift */; };
@@ -54,19 +46,11 @@
 		A321D4882CB0C8D500ECFB96 /* UltimateRugbyTrainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimateRugbyTrainerTests.swift; sourceTree = "<group>"; };
 		A321D48F2CB17DB700ECFB96 /* BuildGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildGameTests.swift; sourceTree = "<group>"; };
 		A38AB2042CA0DE6600367011 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
-		A395A20C2CB9841200C092A4 /* Kickoff.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kickoff.m4a; sourceTree = "<group>"; };
-		A395A20E2CB986A800C092A4 /* DefensiveLinebreak.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = DefensiveLinebreak.m4a; sourceTree = "<group>"; };
-		A395A2102CB9870600C092A4 /* Scrum.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Scrum.m4a; sourceTree = "<group>"; };
-		A395A2122CB9873500C092A4 /* Lineout.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lineout.m4a; sourceTree = "<group>"; };
-		A395A2142CB9876700C092A4 /* OffensiveLinebreak.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = OffensiveLinebreak.m4a; sourceTree = "<group>"; };
-		A395A2162CB9878F00C092A4 /* Try.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Try.m4a; sourceTree = "<group>"; };
-		A395A2182CB987B300C092A4 /* Halftime.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Halftime.m4a; sourceTree = "<group>"; };
 		A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationView.swift; sourceTree = "<group>"; };
 		A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NFPixels-Regular.ttf"; sourceTree = "<group>"; };
 		A3DB7C022C8B8D3E005F1DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A3EAD7E92CA4EB55005FE69A /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
-		A3EAD7EB2CA5AF02005FE69A /* PlayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLogic.swift; sourceTree = "<group>"; };
 		A3F25D692CB7429A003FF37A /* GameSimulationViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSimulationViewLogic.swift; sourceTree = "<group>"; };
 		A3F25D6B2CB74301003FF37A /* ContentViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewLogic.swift; sourceTree = "<group>"; };
 		A3F25D6D2CB74F84003FF37A /* FootballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballView.swift; sourceTree = "<group>"; };
@@ -78,6 +62,22 @@
 		A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3F49E4F2C8A18C7003A0E1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A3FC4EFF2CE5581C004815F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Fulltime.m4a,
+				Tackle.m4a,
+				TacklePoach.m4a,
+			);
+			target = A321D4852CB0C8D500ECFB96 /* UltimateRugbyTrainerTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A3FC4EE72CE18AE5004815F3 /* Sounds */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A3FC4EFF2CE5581C004815F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Sounds; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A321D4832CB0C8D500ECFB96 /* Frameworks */ = {
@@ -106,20 +106,6 @@
 			path = UltimateRugbyTrainerTests;
 			sourceTree = "<group>";
 		};
-		A395A20B2CB983FE00C092A4 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				A395A20C2CB9841200C092A4 /* Kickoff.m4a */,
-				A395A2102CB9870600C092A4 /* Scrum.m4a */,
-				A395A2122CB9873500C092A4 /* Lineout.m4a */,
-				A395A2162CB9878F00C092A4 /* Try.m4a */,
-				A395A2142CB9876700C092A4 /* OffensiveLinebreak.m4a */,
-				A395A2182CB987B300C092A4 /* Halftime.m4a */,
-				A395A20E2CB986A800C092A4 /* DefensiveLinebreak.m4a */,
-			);
-			path = Sounds;
-			sourceTree = "<group>";
-		};
 		A3F49E3C2C8A18C6003A0E1D = {
 			isa = PBXGroup;
 			children = (
@@ -141,11 +127,10 @@
 		A3F49E472C8A18C6003A0E1D /* UltimateRugbyTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				A395A20B2CB983FE00C092A4 /* Sounds */,
+				A3FC4EE72CE18AE5004815F3 /* Sounds */,
 				A3DB7C022C8B8D3E005F1DF6 /* Info.plist */,
 				A3DB7C002C8B8CE7005F1DF6 /* NFPixels-Regular.ttf */,
 				A3F49E482C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift */,
-				A3EAD7EB2CA5AF02005FE69A /* PlayLogic.swift */,
 				A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */,
 				A3F25D6F2CB7512D003FF37A /* FrameByFrameView.swift */,
 				0C6D7FE02CE56B4D0084C6ED /* HockeySimView.swift */,
@@ -206,6 +191,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				A3FC4EE72CE18AE5004815F3 /* Sounds */,
+			);
 			name = UltimateRugbyTrainer;
 			productName = UltimateRugbyTrainer;
 			productReference = A3F49E452C8A18C6003A0E1D /* UltimateRugbyTrainer.app */;
@@ -261,14 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A395A2152CB9876700C092A4 /* OffensiveLinebreak.m4a in Resources */,
-				A395A20D2CB9841200C092A4 /* Kickoff.m4a in Resources */,
 				A3F49E502C8A18C7003A0E1D /* Preview Assets.xcassets in Resources */,
-				A395A2172CB9878F00C092A4 /* Try.m4a in Resources */,
-				A395A2192CB987B300C092A4 /* Halftime.m4a in Resources */,
-				A395A20F2CB986A800C092A4 /* DefensiveLinebreak.m4a in Resources */,
-				A395A2132CB9873500C092A4 /* Lineout.m4a in Resources */,
-				A395A2112CB9870600C092A4 /* Scrum.m4a in Resources */,
 				A3DB7C012C8B8CE7005F1DF6 /* NFPixels-Regular.ttf in Resources */,
 				A3F49E4D2C8A18C7003A0E1D /* Assets.xcassets in Resources */,
 			);
@@ -295,9 +276,9 @@
 				A3A680DC2CAEF4F400B061E5 /* SettingsView.swift in Sources */,
 				A3EAD7EA2CA4EB55005FE69A /* PlayView.swift in Sources */,
 				A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */,
-				A3EAD7EC2CA5AF02005FE69A /* PlayLogic.swift in Sources */,
 				0C6D7FE22CE56B4D0084C6ED /* HockeySimViewLogic.swift in Sources */,
 				0C6D7FE12CE56B4D0084C6ED /* HockeyView.swift in Sources */,
+
 				A3F25D6E2CB74F84003FF37A /* FootballView.swift in Sources */,
 				A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */,
 				A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */,
