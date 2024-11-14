@@ -37,16 +37,48 @@ struct GameSimulationView: View {
                      .font(.largeTitle)
                      .padding()
                      */
-                    Image("GameSimTitle") // Refer to the image by its name in the assets
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
+                    ZStack{
+                        Image("GameSimTitle") // Refer to the image by its name in the assets
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                        Image("GameSimTitle") // Refer to the image by its name in the assets
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .offset(CGSize(width: 5.0, height: 5.0))
+                            .opacity(0.5)
+                            .padding()
+                    }
                     
-                    Image(images[currentImageIndex])
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
-                    Spacer()
+                    if intensity == 5{
+                        Image("grave")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                        HStack{
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.red)
+                            Text("Warning:")
+                                .font(.custom("NFPixels-Regular", size: 25))
+                                .foregroundColor(.red)
+                                .multilineTextAlignment(.center)
+                        }
+                        Text("Devolpers Do Not Take Responsiblity for Death")
+                            .font(.custom("NFPixels-Regular", size: 18))
+                            .foregroundColor(.red)
+                            .multilineTextAlignment(.center)
+                        
+                    } else {
+                        Image(images[currentImageIndex])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                        Spacer()
+                                    
+                    }
                     
                     Text("Intensity") // Display current intensity as an integer
                         .font(.custom("NFPixels-Regular", size: 30))
@@ -110,17 +142,15 @@ struct GameSimulationView: View {
             // Set the timer speed based on intensity
             switch intensity {
             case 1:
-                timerSpeed = 1.0
-            case 2:
                 timerSpeed = 0.7
-            case 3:
+            case 2:
                 timerSpeed = 0.5
-            case 4:
+            case 3:
                 timerSpeed = 0.3
-            case 5:
+            case 4:
                 timerSpeed = 0.1
             default:
-                timerSpeed = 1.0 // Fallback value
+                timerSpeed = 0.7 // Fallback value
             }
             
             // Schedule a new timer

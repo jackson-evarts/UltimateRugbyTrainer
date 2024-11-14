@@ -14,7 +14,7 @@ struct HockeySimView: View {
     @State private var timer: Timer?
     @State var timerSpeed: Double = 1.0
     
-    let images = ["Hockey Skating", "Hockey Skating (1)", "Hockey Skating (2)", "Hockey Skating (3)", "Hockey Skating", "Hockey Skating (5)", "Hockey Skating (6)", "Hockey Skating (7)", "Hockey Skating (8)", "Hockey Skating (9)", "Hockey Skating (10)" ]
+    let images = ["Hockey Skating (1)", "Hockey Skating (2)", "Hockey Skating (3)", "Hockey Skating (4)", "Hockey Skating (5)", "Hockey Skating (6)", "Hockey Skating (7)", "Hockey Skating (8)", "Hockey Skating (9)", "Hockey Skating (10)", "Hockey Skating" ]
 
     
     var body: some View {
@@ -138,13 +138,13 @@ struct HockeySimView: View {
             // Set the timer speed based on intensity
             switch intensity {
             case 1:
-                timerSpeed = 0.3
-            case 2:
                 timerSpeed = 0.2
+            case 2:
+                timerSpeed = 0.15
             case 3:
-                timerSpeed = 0.1
-            case 4:
                 timerSpeed = 0.07
+            case 4:
+                timerSpeed = 0.05
             default:
                 timerSpeed = 0.3 // Fallback value
             }

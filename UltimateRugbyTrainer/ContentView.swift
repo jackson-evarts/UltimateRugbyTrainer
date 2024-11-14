@@ -28,10 +28,20 @@ struct ContentView: View {
                 VStack {
                     
                     // Display the image
-                    Image("title") // Refer to the image by its name in the assets
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 400, height: 200)
+                    ZStack{
+                        Image("title") // Refer to the image by its name in the assets
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 400, height: 200)
+                        Image("title") // Refer to the image by its name in the assets
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 400, height: 200)
+                            .offset(CGSize(width: 5.0, height: 5.0))
+                            .opacity(0.5)
+                        
+                    }
+                        
                     Image("Rugby Ball")
                         .resizable()
                         .frame(width: 200, height: 200)
