@@ -7,6 +7,7 @@
 // most recently modified by Joseph Townsend on 10/23/24
 
 import SwiftUI
+import AVFoundation
 
 struct FootballView: View {
     @State private var selectedUnit: String = "Offense" // Default selection
@@ -87,9 +88,9 @@ struct FootballView: View {
                         .foregroundColor(.neonBlue) // Neon blue text
                     
                     Picker("Time", selection: $selectedTime) {
+                        Text("2 Minutes").tag(2)
                         Text("5 Minutes").tag(5)
                         Text("10 Minutes").tag(10)
-                        Text("15 Minutes").tag(15)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 30)
@@ -126,54 +127,146 @@ struct FootballView: View {
 struct PlayFBView: View {
     var unit: String // The selected unit passed in
     var time: Int // The selected time passed in
-    
+
     @State private var remainingTime: Int // Remaining time in seconds
     @State private var timer: Timer? // Timer object
     @State private var sessionDone = false // Flag to track session completion
-    
+    @State private var nextInterval: Int = 10 // The next interval for updates
+    @State private var selectedPlay: String = "" // Selected play from the list
+    @State private var selectedSubtype: String = "" // Selected subtype based on play
+    @State private var selectedNumber: String = "" // Selected number or blitz type
+    @State private var timeSinceLastCall: Int = 0 // Tracks time since the last play call
+
+    // Offense arrays and dictionaries
+    let numberOptions = [5, 10, 20, 35, 45]
+    let playOptions = [
+        "Inside Run",
+        "Outside Run",
+        "Quick 3-Step Pass",
+        "Medium 5-Step Pass",
+        "Deep 5-Step Pass"
+    ]
+    let intervals = [10, 15, 20]
+    let playSubtypes: [String: [String]] = [
+        "Inside Run": ["Inside Zone", "Trap"],
+        "Outside Run": ["Midzone", "Pitch", "Jet Sweep", "Power"],
+        "Quick 3-Step Pass": ["Slant", "Hitch", "Speed Out", "Screen"],
+        "Medium 5-Step Pass": ["Dig", "Out", "Curl", "Comeback"],
+        "Deep 5-Step Pass": ["Post", "Corner", "Fade", "Stutter"]
+    ]
+
+    // Defense arrays and dictionaries
+    let defensiveStyles = ["Man", "Zone"]
+    let zoneTypes = ["Cover 4", "Cover 3", "Cover 2"]
+    let gaps = ["A Gap", "B Gap", "C Gap", "D Gap"]
+
     init(unit: String, time: Int) {
         self.unit = unit
         self.time = time
         _remainingTime = State(initialValue: time * 60) // Convert minutes to seconds
     }
-    
+
     var body: some View {
         ZStack {
             Color.black // Background color
                 .edgesIgnoringSafeArea(.all) // Fill entire background
-            
+
             if sessionDone {
                 SessionDoneView() // Show session done view
             } else {
-                // Center the timer display
                 VStack {
-                    Spacer() // Pushes the timer down to center it vertically
+                    Spacer()
+
+                    // Timer display
                     Text("\(remainingTime / 60) : \(String(format: "%02d", remainingTime % 60))")
-                        .font(.system(size: 100, weight: .bold)) // Huge timer
+                        .font(.system(size: 100, weight: .bold))
                         .foregroundColor(.red)
                         .padding()
-                    Spacer() // Pushes the timer up to center it vertically
+
+                    if unit == "Offense" || unit == "Defense" {
+                        // Display for both offense and defense
+                        Text("Play: \(selectedPlay)")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+
+                        Text("Subtype: \(selectedSubtype)")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                            .padding()
+
+                        Text("Details: \(selectedNumber)")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+
+                    Spacer()
                 }
             }
         }
         .onAppear(perform: startTimer)
         .onDisappear(perform: stopTimer)
     }
-    
+
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             if remainingTime > 0 {
                 remainingTime -= 1
+                timeSinceLastCall += 1
+
+                let isTwoMinuteDrill = (unit == "Defense" && time == 2) || (unit == "Offense" && time == 2)
+                let intervalLimit = isTwoMinuteDrill ? 8 : nextInterval
+
+                if timeSinceLastCall >= intervalLimit {
+                    updateRandomSelection()
+                    timeSinceLastCall = 0
+
+                    nextInterval = isTwoMinuteDrill ? Int.random(in: 8...10) : (intervals.randomElement() ?? 10)
+                }
             } else {
-                sessionDone = true // Update flag when time is up
+                sessionDone = true
                 stopTimer()
             }
         }
     }
-    
+
     func stopTimer() {
         timer?.invalidate()
         timer = nil
+    }
+
+    func updateRandomSelection() {
+        if unit == "Offense" {
+            // Pick random offensive play and number
+            selectedPlay = playOptions.randomElement() ?? ""
+            selectedNumber = "\(numberOptions.randomElement() ?? 0)"
+
+            // Pick a random subtype based on the selected play
+            if let subtypes = playSubtypes[selectedPlay] {
+                selectedSubtype = subtypes.randomElement() ?? ""
+            } else {
+                selectedSubtype = ""
+            }
+        } else if unit == "Defense" {
+            // Pick random defensive play
+            selectedPlay = defensiveStyles.randomElement() ?? ""
+
+
+            // Decide on blitz or no blitz
+            let blitzDecision = Bool.random()
+            if blitzDecision {
+                // Blitz: Choose 1 or 2 gaps for execution
+                let blitzCombination = Int.random(in: 1...2)
+                let selectedGaps = (0..<blitzCombination).map { _ in gaps.randomElement() ?? "" }
+                selectedNumber = selectedGaps.joined(separator: " + ")
+                selectedSubtype = "Blitz!"
+            } else {
+                // No Blitz
+                selectedNumber = "No Blitz"
+                selectedSubtype = "No Blitz"
+            }
+        }
     }
 }
 
