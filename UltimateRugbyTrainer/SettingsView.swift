@@ -19,7 +19,7 @@ struct SettingsView: View {
     
     var body: some View {
         VStack{
-            NavigationLink(destination: FootballView()){
+            NavigationLink(destination: FBTransitionView()){
                 PixelTextForButton(label: "Football")
                 
             }
@@ -29,6 +29,10 @@ struct SettingsView: View {
             }
             NavigationLink(destination: HockeyView()){
                 PixelTextForButton(label: "Hockey")
+                
+            }
+            NavigationLink(destination: BasketballView()){
+                PixelTextForButton(label: "Basketball")
                 
             }
         }

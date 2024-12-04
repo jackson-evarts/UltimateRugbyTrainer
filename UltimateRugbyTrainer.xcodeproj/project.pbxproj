@@ -26,6 +26,8 @@
 		A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */; };
 		A3F49E4D2C8A18C7003A0E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */; };
 		A3F49E502C8A18C7003A0E1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F49E4F2C8A18C7003A0E1D /* Preview Assets.xcassets */; };
+		CB4CC3D32D00EFBE001FC4FD /* FBTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4CC3D22D00EFB6001FC4FD /* FBTransitionView.swift */; };
+		CBE2C3F72CE575B5004C5FEE /* BasketballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2C3F62CE575AD004C5FEE /* BasketballView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		A3F49E4A2C8A18C6003A0E1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A3F49E4C2C8A18C7003A0E1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3F49E4F2C8A18C7003A0E1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB4CC3D22D00EFB6001FC4FD /* FBTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBTransitionView.swift; sourceTree = "<group>"; };
+		CBE2C3F62CE575AD004C5FEE /* BasketballView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -138,8 +142,10 @@
 				0C6D7FDE2CE56B4D0084C6ED /* HockeyView.swift */,
 				A3F25D712CB7514B003FF37A /* FrameByFrameManager.swift */,
 				A3F25D6D2CB74F84003FF37A /* FootballView.swift */,
+				CB4CC3D22D00EFB6001FC4FD /* FBTransitionView.swift */,
 				A3F25D6B2CB74301003FF37A /* ContentViewLogic.swift */,
 				A3A680DB2CAEF4F400B061E5 /* SettingsView.swift */,
+				CBE2C3F62CE575AD004C5FEE /* BasketballView.swift */,
 				A3DB7BFC2C8A27AE005F1DF6 /* GameSimulationView.swift */,
 				A3F25D692CB7429A003FF37A /* GameSimulationViewLogic.swift */,
 				A3EAD7E92CA4EB55005FE69A /* PlayView.swift */,
@@ -278,14 +284,15 @@
 				A3DB7BFD2C8A27AE005F1DF6 /* GameSimulationView.swift in Sources */,
 				0C6D7FE22CE56B4D0084C6ED /* HockeySimViewLogic.swift in Sources */,
 				0C6D7FE12CE56B4D0084C6ED /* HockeyView.swift in Sources */,
-
 				A3F25D6E2CB74F84003FF37A /* FootballView.swift in Sources */,
 				A3F49E4B2C8A18C6003A0E1D /* ContentView.swift in Sources */,
 				A3F49E492C8A18C6003A0E1D /* UltimateRugbyTrainerApp.swift in Sources */,
 				A38AB2052CA0DE6600367011 /* TutorialView.swift in Sources */,
+				CBE2C3F72CE575B5004C5FEE /* BasketballView.swift in Sources */,
 				A3F25D6A2CB7429A003FF37A /* GameSimulationViewLogic.swift in Sources */,
 				0C6D7FE32CE56B4D0084C6ED /* HockeySimView.swift in Sources */,
 				A3F25D702CB7512D003FF37A /* FrameByFrameView.swift in Sources */,
+				CB4CC3D32D00EFBE001FC4FD /* FBTransitionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
