@@ -24,7 +24,7 @@ struct BasketballView: View {
                            .foregroundColor(.basketballOrange) // Orange text
                            .padding(.top, 20)
                        
-                       Image("BasketballCourt") // Reference to an image asset representing a basketball court
+                       Image("kobepic") 
                            .resizable()
                            .aspectRatio(contentMode: .fit)
                            .padding()
